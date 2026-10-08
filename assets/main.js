@@ -30,7 +30,8 @@
     '02': 'RASAD_02_Information_Security.mp4',
     '03': 'RASAD_03_Risk_Assessment.mp4',
     '04': 'RASAD_04_Digital_Forensics.mp4',
-    '05': 'RASAD_05_Security_Consulting.mp4'
+    '05': 'RASAD_05_Security_Consulting.mp4',
+    'aml': 'RASAD_Banks_AML_CFT.mp4'
   };
   var dialog = document.getElementById('player');
   var video = document.getElementById('player-video');
