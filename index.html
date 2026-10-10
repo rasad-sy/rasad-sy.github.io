@@ -7,7 +7,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>RASAD | رصد: Cybersecurity services in Syria</title>
 <meta name="description" content="RASAD (رصد) is a cybersecurity and compliance services company in Damascus, Syria: cybersecurity, information security, risk assessment, digital forensics, security consulting and AML/CFT compliance support for banks, investors and regulators.">
-<meta name="theme-color" content="#090C11">
+<meta name="theme-color" content="#0B1630">
 <link rel="icon" type="image/png" href="assets/img/favicon-64.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <meta property="og:type" content="website">
@@ -17,81 +17,103 @@
 <meta property="og:image" content="https://rasad-sy.github.io/assets/img/og.jpg">
 <link rel="canonical" href="https://rasad-sy.github.io/">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preload" href="assets/fonts/Barlow-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Plex-300-latin.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="assets/fonts/IBMPlexSansArabic-500-arabic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/fonts.css">
-<link rel="stylesheet" href="assets/styles.css">
-<script src="assets/main.js" defer></script>
+<link rel="stylesheet" href="assets/fonts.css?v=6">
+<link rel="stylesheet" href="assets/styles.css?v=6">
+<script src="assets/main.js?v=6" defer></script>
 </head>
 <body>
-<a class="skip" href="#main"><span class="en">Skip to content</span><span class="ar">انتقل إلى المحتوى</span></a>
+<a class="skip" href="#main"><span class="en">Skip to content</span><span class="ar">انتقل إلى المحتوى</span><span class="fr">Aller au contenu</span><span class="de">Zum Inhalt springen</span></a>
 
 <header class="nav" id="top">
   <div class="wrap nav-row">
     <a class="brand" href="#top" aria-label="RASAD رصد">
-      <img src="assets/img/emblem.png" alt="" width="36" height="36">
+      <img src="assets/img/emblem.png" alt="" width="34" height="34">
       <span class="brand-name">RASAD <span class="brand-ar">رصد</span></span>
     </a>
     <nav class="links" aria-label="Main">
-      <a href="#services"><span class="en">Services</span><span class="ar">خدماتنا</span></a>
-      <a href="#compliance"><span class="en">Compliance</span><span class="ar">الامتثال</span></a>
-      <a href="#videos"><span class="en">Videos</span><span class="ar">الفيديوهات</span></a>
-      <a href="#about"><span class="en">About</span><span class="ar">من نحن</span></a>
-      <a href="#contact"><span class="en">Contact</span><span class="ar">تواصل</span></a>
+      <a href="#services"><span class="en">Services</span><span class="ar">خدماتنا</span><span class="fr">Services</span><span class="de">Leistungen</span></a>
+      <a href="#compliance"><span class="en">Compliance</span><span class="ar">الامتثال</span><span class="fr">Conformité</span><span class="de">Compliance</span></a>
+      <a href="#videos"><span class="en">Videos</span><span class="ar">الفيديوهات</span><span class="fr">Vidéos</span><span class="de">Videos</span></a>
+      <a href="#about"><span class="en">About</span><span class="ar">من نحن</span><span class="fr">À propos</span><span class="de">Über uns</span></a>
+      <a href="#contact"><span class="en">Contact</span><span class="ar">تواصل</span><span class="fr">Contact</span><span class="de">Kontakt</span></a>
     </nav>
-    <button class="lang" type="button" id="lang-toggle" aria-label="Switch language">
-      <span class="en">العربية</span><span class="ar">English</span>
-    </button>
+    <div class="langs" role="group" aria-label="Language · اللغة · Langue · Sprache">
+      <button type="button" data-set-lang="ar" lang="ar" aria-label="العربية" aria-pressed="true">عربي</button>
+      <button type="button" data-set-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+      <button type="button" data-set-lang="fr" lang="fr" aria-label="Français" aria-pressed="false">FR</button>
+      <button type="button" data-set-lang="de" lang="de" aria-label="Deutsch" aria-pressed="false">DE</button>
+    </div>
   </div>
 </header>
 
 <main id="main">
-  <!-- HERO -->
+  <!-- HERO: a live field of signals; RASAD flags the one that does not belong -->
   <section class="hero">
-    <div class="rings" aria-hidden="true"></div>
+    <canvas class="field" id="field" aria-hidden="true"></canvas>
     <div class="wrap hero-inner">
-      <img class="hero-logo" src="assets/img/logo.png" alt="RASAD رصد" width="640" height="317">
-      <p class="eyebrow"><span class="en">Cybersecurity services · Damascus, Syria</span><span class="ar">خدمات الأمن السيبراني · دمشق، سوريا</span></p>
+      <p class="eyebrow"><span class="dot-live" aria-hidden="true"></span><span class="en">Cybersecurity services · Damascus, Syria</span><span class="ar">خدمات الأمن السيبراني · دمشق، سوريا</span><span class="fr">Services de cybersécurité · Damas, Syrie</span><span class="de">Cybersicherheit · Damaskus, Syrien</span></p>
       <h1>
-        <span class="en">Always watching. <em>Always protected.</em></span>
-        <span class="ar">نرصد دائماً، <em>لتبقى محمياً دائماً.</em></span>
+        <span class="en">We see it <em>first.</em></span>
+        <span class="ar">نراه <em>أولاً.</em></span>
+        <span class="fr">Nous le voyons <em>en premier.</em></span>
+        <span class="de">Wir sehen es <em>zuerst.</em></span>
       </h1>
       <p class="lead">
         <span class="en">RASAD helps businesses and institutions in Syria protect their systems, their information and their operations: from finding weak spots to investigating incidents and planning for the unexpected.</span>
         <span class="ar">تساعد رصد الشركات والمؤسسات في سوريا على حماية أنظمتها ومعلوماتها وأعمالها: من كشف نقاط الضعف إلى التحقيق في الحوادث والاستعداد لما هو غير متوقع.</span>
+        <span class="fr">RASAD aide les entreprises et les institutions en Syrie à protéger leurs systèmes, leurs informations et leurs activités : de la détection des points faibles à l’investigation des incidents, jusqu’à la préparation à l’imprévu.</span>
+        <span class="de">RASAD hilft Unternehmen und Institutionen in Syrien, ihre Systeme, ihre Informationen und ihren Betrieb zu schützen: vom Aufspüren von Schwachstellen über die Untersuchung von Vorfällen bis zur Vorbereitung auf das Unerwartete.</span>
       </p>
       <div class="cta">
-        <a class="btn primary" href="mailto:Rasad.syria@gmail.com"><span class="en">Talk to us</span><span class="ar">تواصل معنا</span></a>
-        <button class="btn ghost" type="button" data-video="00"><span class="play" aria-hidden="true"></span><span class="en">Watch the overview</span><span class="ar">شاهد النظرة العامة</span></button>
+        <a class="btn primary" href="mailto:Rasad.syria@gmail.com"><span class="en">Talk to us</span><span class="ar">تواصل معنا</span><span class="fr">Parlons-en</span><span class="de">Sprechen Sie uns an</span></a>
+        <button class="btn ghost" type="button" data-video="00"><span class="play" aria-hidden="true"></span><span class="en">Watch the overview</span><span class="ar">شاهد النظرة العامة</span><span class="fr">Voir la présentation</span><span class="de">Überblick ansehen</span></button>
       </div>
-      <a class="news" href="#compliance"><span class="badge"><span class="en">New</span><span class="ar">جديد</span></span><span class="en">AML/CFT for banks in Syria: watch the video</span><span class="ar">مكافحة غسل الأموال وتمويل الإرهاب للمصارف: شاهد الفيديو</span></a>
+      <a class="news" href="#compliance"><span class="badge"><span class="en">New</span><span class="ar">جديد</span><span class="fr">Nouveau</span><span class="de">Neu</span></span><span class="en">AML/CFT for banks in Syria: watch the video</span><span class="ar">مكافحة غسل الأموال وتمويل الإرهاب للمصارف: شاهد الفيديو</span><span class="fr">LBC/FT pour les banques en Syrie : voir la vidéo</span><span class="de">AML/CFT für Banken in Syrien: Video ansehen</span></a>
+    </div>
+    <div class="hero-foot">
+      <div class="wrap strip">
+        <span class="en">Cybersecurity</span><span class="ar">الأمن السيبراني</span><span class="fr">Cybersécurité</span><span class="de">Cyber­sicherheit</span><i aria-hidden="true"></i>
+        <span class="en">Information security</span><span class="ar">أمن المعلومات</span><span class="fr">Sécurité de l’information</span><span class="de">Informations­sicherheit</span><i aria-hidden="true"></i>
+        <span class="en">Risk assessment</span><span class="ar">تقييم المخاطر</span><span class="fr">Évaluation des risques</span><span class="de">Risiko­bewertung</span><i aria-hidden="true"></i>
+        <span class="en">Digital forensics</span><span class="ar">التحقيقات الرقمية</span><span class="fr">Investigation numérique</span><span class="de">Digitale Forensik</span><i aria-hidden="true"></i>
+        <span class="en">Security consulting</span><span class="ar">الاستشارات الأمنية</span><span class="fr">Conseil en sécurité</span><span class="de">Sicherheits­beratung</span><i aria-hidden="true"></i>
+        <span class="en">AML/CFT</span><span class="ar">مكافحة غسل الأموال</span><span class="fr">LBC/FT</span><span class="de">AML/CFT</span>
+      </div>
     </div>
   </section>
 
   <!-- WHY -->
   <section class="section" id="why">
     <div class="wrap">
-      <p class="kicker"><span class="num">01</span><span class="en">Why it matters</span><span class="ar">لماذا يهمّ ذلك</span></p>
-      <h2><span class="en">The risks are <em class="red">real.</em></span><span class="ar">المخاطر <em class="red">حقيقية.</em></span></h2>
+      <div class="head">
+        <p class="kicker"><span class="num">01</span><span class="en">Why it matters</span><span class="ar">لماذا يهمّ ذلك</span><span class="fr">Pourquoi c’est important</span><span class="de">Warum es wichtig ist</span></p>
+        <h2><span class="en">The risks are <em class="red">real.</em></span><span class="ar">المخاطر <em class="red">حقيقية.</em></span><span class="fr">Les risques sont <em class="red">réels.</em></span><span class="de">Die Risiken sind <em class="red">real.</em></span></h2>
+      </div>
       <div class="stats">
-        <div class="stat">
-          <strong>$4.99M</strong>
-          <p><span class="en">average cost of a data breach</span><span class="ar">متوسط تكلفة اختراق البيانات</span></p>
+        <div class="stat reveal">
+          <strong data-count="4.99" data-prefix="$" data-suffix="M" data-dec="2">$4.99M</strong>
+          <div class="dots" data-n="50" data-a="50" data-cols="10" data-tone="navy" aria-hidden="true"></div><span class="unit"><span class="en">1 dot = $100,000</span><span class="ar">كل نقطة = 100,000 دولار</span><span class="fr">1 point = 100 000 $</span><span class="de">1 Punkt = 100.000 $</span></span>
+          <p><span class="en">average cost of a data breach</span><span class="ar">متوسط تكلفة اختراق البيانات</span><span class="fr">coût moyen d’une violation de données</span><span class="de">durchschnittliche Kosten einer Datenpanne</span></p>
           <small>IBM Cost of a Data Breach 2026</small>
         </div>
-        <div class="stat">
-          <strong>247</strong>
-          <p><span class="en">days on average to identify (183) and contain (64) a breach</span><span class="ar">يوماً في المتوسط لاكتشاف الاختراق (183) واحتوائه (64)</span></p>
+        <div class="stat reveal">
+          <strong data-count="247">247</strong>
+          <div class="dots" data-n="247" data-a="183" data-b="64" data-cols="50" aria-hidden="true"></div><span class="unit"><span class="en">1 dot = 1 day</span><span class="ar">كل نقطة = يوم واحد</span><span class="fr">1 point = 1 jour</span><span class="de">1 Punkt = 1 Tag</span></span>
+          <p><span class="en">days on average to identify (183) and contain (64) a breach</span><span class="ar">يوماً في المتوسط لاكتشاف الاختراق (183) واحتوائه (64)</span><span class="fr">jours en moyenne pour détecter (183) et contenir (64) une violation</span><span class="de">Tage dauert es im Schnitt, eine Datenpanne zu erkennen (183) und einzudämmen (64)</span></p>
           <small>IBM Cost of a Data Breach 2026</small>
         </div>
-        <div class="stat">
-          <strong>48%</strong>
-          <p><span class="en">of breaches now involve a third party</span><span class="ar">من الاختراقات يشارك فيها طرف ثالث</span></p>
+        <div class="stat reveal">
+          <strong data-count="48" data-suffix="%">48%</strong>
+          <div class="dots" data-n="100" data-a="48" data-cols="20" data-tone="red" aria-hidden="true"></div><span class="unit"><span class="en">1 dot = 1%</span><span class="ar">كل نقطة = 1%</span><span class="fr">1 point = 1 %</span><span class="de">1 Punkt = 1 %</span></span>
+          <p><span class="en">of breaches now involve a third party</span><span class="ar">من الاختراقات يشارك فيها طرف ثالث</span><span class="fr">des violations impliquent désormais un tiers</span><span class="de">der Datenpannen erfolgen inzwischen unter Beteiligung Dritter</span></p>
           <small>Verizon DBIR 2026</small>
         </div>
-        <div class="stat">
-          <strong>31%</strong>
-          <p><span class="en">of breaches start with an exploited vulnerability</span><span class="ar">من الاختراقات تبدأ باستغلال ثغرة</span></p>
+        <div class="stat reveal">
+          <strong data-count="31" data-suffix="%">31%</strong>
+          <div class="dots" data-n="100" data-a="31" data-cols="20" data-tone="red" aria-hidden="true"></div><span class="unit"><span class="en">1 dot = 1%</span><span class="ar">كل نقطة = 1%</span><span class="fr">1 point = 1 %</span><span class="de">1 Punkt = 1 %</span></span>
+          <p><span class="en">of breaches start with an exploited vulnerability</span><span class="ar">من الاختراقات تبدأ باستغلال ثغرة</span><span class="fr">des violations commencent par l’exploitation d’une vulnérabilité</span><span class="de">der Datenpannen beginnen mit einer ausgenutzten Schwachstelle</span></p>
           <small>Verizon DBIR 2026</small>
         </div>
       </div>
@@ -99,119 +121,132 @@
   </section>
 
   <!-- SERVICES -->
-  <section class="section" id="services">
+  <section class="section tint" id="services">
     <div class="wrap">
-      <p class="kicker"><span class="num">02</span><span class="en">Our services</span><span class="ar">خدماتنا</span></p>
-      <h2><span class="en">Five services. <em>One partner.</em></span><span class="ar">خمس خدمات. <em>شريك واحد.</em></span></h2>
-      <p class="sub"><span class="en">Each service stands on its own, and together they build on each other.</span><span class="ar">كل خدمة قائمة بذاتها، ومعاً تبني على بعضها.</span></p>
+      <div class="head split">
+        <div>
+          <p class="kicker"><span class="num">02</span><span class="en">Our services</span><span class="ar">خدماتنا</span><span class="fr">Nos services</span><span class="de">Unsere Leistungen</span></p>
+          <h2><span class="en">Five services. <em>One partner.</em></span><span class="ar">خمس خدمات. <em>شريك واحد.</em></span><span class="fr">Cinq services. <em>Un seul partenaire.</em></span><span class="de">Fünf Leistungen. <em>Ein Partner.</em></span></h2>
+        </div>
+        <p class="sub"><span class="en">Each service stands on its own, and together they build on each other.</span><span class="ar">كل خدمة قائمة بذاتها، ومعاً تبني على بعضها.</span><span class="fr">Chaque service se suffit à lui-même, et ensemble ils se renforcent.</span><span class="de">Jede Leistung steht für sich, und gemeinsam bauen sie aufeinander auf.</span></p>
+      </div>
       <div class="cards">
-        <article class="card">
-          <div class="card-top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg><span class="n">01</span></div>
-          <h3><span class="en">Cybersecurity</span><span class="ar">الأمن السيبراني</span></h3>
-          <p><span class="en">Protecting your networks, systems, applications and data. We test your defences within an authorized scope, fix the weak spots and help you detect and respond to incidents.</span><span class="ar">حماية الشبكات والأنظمة والتطبيقات والبيانات. نختبر دفاعاتك ضمن نطاق مصرّح به، ونعالج نقاط الضعف، ونساعدك على اكتشاف الحوادث والاستجابة لها.</span></p>
-          <button class="link" type="button" data-video="01"><span class="en">Watch the video</span><span class="ar">شاهد الفيديو</span></button>
+        <article class="card reveal">
+          <div class="card-top"><svg class="ico" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208,42H48A14,14,0,0,0,34,56v56c0,51.94,25.12,83.4,46.2,100.64,22.73,18.6,45.27,24.89,46.22,25.15a6,6,0,0,0,3.16,0c.95-.26,23.49-6.55,46.22-25.15C196.88,195.4,222,163.94,222,112V56A14,14,0,0,0,208,42Zm2,70c0,37.76-13.94,68.39-41.44,91.06A131.17,131.17,0,0,1,128,225.72a130.94,130.94,0,0,1-40.56-22.66C59.94,180.39,46,149.76,46,112V56a2,2,0,0,1,2-2H208a2,2,0,0,1,2,2ZM172.24,99.76a6,6,0,0,1,0,8.48l-56,56a6,6,0,0,1-8.48,0l-24-24a6,6,0,0,1,8.48-8.48L112,151.51l51.76-51.75A6,6,0,0,1,172.24,99.76Z"/></svg><span class="n">01</span></div>
+          <h3><span class="en">Cybersecurity</span><span class="ar">الأمن السيبراني</span><span class="fr">Cybersécurité</span><span class="de">Cyber­sicherheit</span></h3>
+          <p><span class="en">Protecting your networks, systems, applications and data. We test your defences within an authorized scope, fix the weak spots and help you detect and respond to incidents.</span><span class="ar">حماية الشبكات والأنظمة والتطبيقات والبيانات. نختبر دفاعاتك ضمن نطاق مصرّح به، ونعالج نقاط الضعف، ونساعدك على اكتشاف الحوادث والاستجابة لها.</span><span class="fr">Protéger vos réseaux, systèmes, applications et données. Nous testons vos défenses dans un périmètre autorisé, corrigeons les points faibles et vous aidons à détecter les incidents et à y répondre.</span><span class="de">Schutz Ihrer Netzwerke, Systeme, Anwendungen und Daten. Wir testen Ihre Abwehr in einem freigegebenen Rahmen, beheben Schwachstellen und helfen Ihnen, Vorfälle zu erkennen und darauf zu reagieren.</span></p>
+          <button class="link" type="button" data-video="01"><span class="en">Watch the video</span><span class="ar">شاهد الفيديو</span><span class="fr">Voir la vidéo</span><span class="de">Video ansehen</span></button>
         </article>
-        <article class="card">
-          <div class="card-top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v3"/></svg><span class="n">02</span></div>
-          <h3><span class="en">Information Security</span><span class="ar">أمن المعلومات</span></h3>
-          <p><span class="en">Protecting the information itself. We classify it by sensitivity, organize who can access what, and write the policies that keep it confidential, correct and available.</span><span class="ar">حماية المعلومات نفسها. نصنّفها حسب الحساسية، وننظّم صلاحيات الوصول، ونعدّ السياسات التي تحافظ على سرّيتها وسلامتها وإتاحتها.</span></p>
-          <button class="link" type="button" data-video="02"><span class="en">Watch the video</span><span class="ar">شاهد الفيديو</span></button>
+        <article class="card reveal">
+          <div class="card-top"><svg class="ico" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M120,178H110v-6a26,26,0,0,0-52,0v6H48a6,6,0,0,0-6,6v40a6,6,0,0,0,6,6h72a6,6,0,0,0,6-6V184A6,6,0,0,0,120,178Zm-50-6a14,14,0,0,1,28,0v6H70Zm44,46H54V190h60ZM212.24,83.76l-56-56A6,6,0,0,0,152,26H56A14,14,0,0,0,42,40v88a6,6,0,0,0,12,0V40a2,2,0,0,1,2-2h90V88a6,6,0,0,0,6,6h50V216a2,2,0,0,1-2,2H160a6,6,0,0,0,0,12h40a14,14,0,0,0,14-14V88A6,6,0,0,0,212.24,83.76ZM158,46.48,193.52,82H158Z"/></svg><span class="n">02</span></div>
+          <h3><span class="en">Information Security</span><span class="ar">أمن المعلومات</span><span class="fr">Sécurité de l’information</span><span class="de">Informations­sicherheit</span></h3>
+          <p><span class="en">Protecting the information itself. We classify it by sensitivity, organize who can access what, and write the policies that keep it confidential, correct and available.</span><span class="ar">حماية المعلومات نفسها. نصنّفها حسب الحساسية، وننظّم صلاحيات الوصول، ونعدّ السياسات التي تحافظ على سرّيتها وسلامتها وإتاحتها.</span><span class="fr">Protéger l’information elle-même. Nous la classons selon sa sensibilité, organisons qui peut accéder à quoi et rédigeons les politiques qui en préservent la confidentialité, l’intégrité et la disponibilité.</span><span class="de">Schutz der Informationen selbst. Wir stufen sie nach Schutzbedarf ein, regeln, wer worauf zugreifen darf, und schreiben die Richtlinien, die sie vertraulich, korrekt und verfügbar halten.</span></p>
+          <button class="link" type="button" data-video="02"><span class="en">Watch the video</span><span class="ar">شاهد الفيديو</span><span class="fr">Voir la vidéo</span><span class="de">Video ansehen</span></button>
         </article>
-        <article class="card">
-          <div class="card-top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V4"/><path d="M4 20h16"/><rect x="7" y="12" width="3" height="5"/><rect x="12" y="8" width="3" height="9"/><rect x="17" y="5" width="3" height="12"/></svg><span class="n">03</span></div>
-          <h3><span class="en">Risk Assessment</span><span class="ar">تقييم المخاطر</span></h3>
-          <p><span class="en">Showing you where to act first. We map your assets and threats, score each risk by likelihood and impact, review your suppliers and deliver a prioritized plan, plus a general assessment of the environment you operate in.</span><span class="ar">نوضّح لك من أين تبدأ. نحصر أصولك والتهديدات، ونقيّم كل خطر حسب احتماله وأثره، ونراجع مورّديك، ونسلّمك خطة مرتّبة حسب الأولوية، مع تقييم عام لبيئة عملك.</span></p>
-          <button class="link" type="button" data-video="03"><span class="en">Watch the video</span><span class="ar">شاهد الفيديو</span></button>
+        <article class="card reveal">
+          <div class="card-top"><svg class="ico" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M230,208a6,6,0,0,1-6,6H32a6,6,0,0,1-6-6V48a6,6,0,0,1,12,0V161.52l53.76-53.76a6,6,0,0,1,8.48,0L128,135.51,185.52,78H160a6,6,0,0,1,0-12h40a6,6,0,0,1,6,6v40a6,6,0,0,1-12,0V86.48l-61.76,61.76a6,6,0,0,1-8.48,0L96,120.49l-58,58V202H224A6,6,0,0,1,230,208Z"/></svg><span class="n">03</span></div>
+          <h3><span class="en">Risk Assessment</span><span class="ar">تقييم المخاطر</span><span class="fr">Évaluation des risques</span><span class="de">Risiko­bewertung</span></h3>
+          <p><span class="en">Showing you where to act first. We map your assets and threats, score each risk by likelihood and impact, review your suppliers and deliver a prioritized plan, plus a general assessment of the environment you operate in.</span><span class="ar">نوضّح لك من أين تبدأ. نحصر أصولك والتهديدات، ونقيّم كل خطر حسب احتماله وأثره، ونراجع مورّديك، ونسلّمك خطة مرتّبة حسب الأولوية، مع تقييم عام لبيئة عملك.</span><span class="fr">Vous montrer par où commencer. Nous recensons vos actifs et les menaces, évaluons chaque risque selon sa probabilité et son impact, examinons vos fournisseurs et livrons un plan priorisé, ainsi qu’une évaluation générale de l’environnement dans lequel vous opérez.</span><span class="de">Wir zeigen Ihnen, wo Sie zuerst ansetzen. Wir erfassen Ihre Werte und Bedrohungen, bewerten jedes Risiko nach Wahrscheinlichkeit und Auswirkung, prüfen Ihre Lieferanten und liefern einen priorisierten Plan – dazu eine allgemeine Einschätzung des Umfelds, in dem Sie tätig sind.</span></p>
+          <button class="link" type="button" data-video="03"><span class="en">Watch the video</span><span class="ar">شاهد الفيديو</span><span class="fr">Voir la vidéo</span><span class="de">Video ansehen</span></button>
         </article>
-        <article class="card">
-          <div class="card-top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/><path d="M8 10.5h5M10.5 8v5"/></svg><span class="n">04</span></div>
-          <h3><span class="en">Digital Forensics</span><span class="ar">التحقيقات الرقمية</span></h3>
-          <p><span class="en">Answering what really happened. Within a clear authorization, we collect and preserve evidence, rebuild the timeline and document findings you can act on.</span><span class="ar">نجيب عمّا حدث فعلاً. ضمن تفويض واضح، نجمع الأدلة ونحفظها، ونعيد بناء التسلسل الزمني، ونوثّق نتائج يمكنك البناء عليها.</span></p>
-          <button class="link" type="button" data-video="04"><span class="en">Watch the video</span><span class="ar">شاهد الفيديو</span></button>
+        <article class="card reveal">
+          <div class="card-top"><svg class="ico" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M70,128a132.68,132.68,0,0,1-14,59.58,6,6,0,0,1-5.38,3.33,6,6,0,0,1-5.36-8.67A120.74,120.74,0,0,0,58,128,69.72,69.72,0,0,1,84.25,73.36a6,6,0,0,1,7.51,9.37A57.73,57.73,0,0,0,70,128Zm58-6a6,6,0,0,0-6,6,186.07,186.07,0,0,1-23.23,90.07,6,6,0,0,0,10.5,5.82A198.14,198.14,0,0,0,134,128,6,6,0,0,0,128,122Zm0-32a38,38,0,0,0-38,38,6,6,0,0,0,12,0,26,26,0,0,1,52,0,216.06,216.06,0,0,1-20.71,92.85A6,6,0,1,0,144.16,226,227.94,227.94,0,0,0,166,128,38,38,0,0,0,128,90Zm0-64A102.11,102.11,0,0,0,26,128a90,90,0,0,1-5.12,30,6,6,0,1,0,11.31,4A101.83,101.83,0,0,0,38,128a90,90,0,0,1,180,0,284.7,284.7,0,0,1-5.33,54.84,6,6,0,0,0,4.72,7.05,6.8,6.8,0,0,0,1.17.11,6,6,0,0,0,5.88-4.84A295.92,295.92,0,0,0,230,128,102.12,102.12,0,0,0,128,26ZM94,154.13a6,6,0,0,0-7.07,4.69,152.82,152.82,0,0,1-17.44,46,6,6,0,0,0,10.4,6,164.77,164.77,0,0,0,18.8-49.65A6,6,0,0,0,94,154.13ZM128,58a70.76,70.76,0,0,0-8.75.54,6,6,0,1,0,1.49,11.91A58,58,0,0,1,186,128a252.27,252.27,0,0,1-1.94,31.26,6,6,0,0,0,5.21,6.69,6.59,6.59,0,0,0,.75,0,6,6,0,0,0,5.95-5.26A266.46,266.46,0,0,0,198,128,70.08,70.08,0,0,0,128,58ZM185.44,186.2a6,6,0,0,0-7.31,4.31c-1.47,5.74-3.18,11.49-5.06,17.09a6,6,0,0,0,11.38,3.82c2-5.88,3.75-11.9,5.3-17.92A6,6,0,0,0,185.44,186.2Z"/></svg><span class="n">04</span></div>
+          <h3><span class="en">Digital Forensics</span><span class="ar">التحقيقات الرقمية</span><span class="fr">Investigation numérique</span><span class="de">Digitale Forensik</span></h3>
+          <p><span class="en">Answering what really happened. Within a clear authorization, we collect and preserve evidence, rebuild the timeline and document findings you can act on.</span><span class="ar">نجيب عمّا حدث فعلاً. ضمن تفويض واضح، نجمع الأدلة ونحفظها، ونعيد بناء التسلسل الزمني، ونوثّق نتائج يمكنك البناء عليها.</span><span class="fr">Établir ce qui s’est réellement passé. Dans le cadre d’une autorisation claire, nous collectons et préservons les preuves, reconstituons la chronologie et documentons des constats sur lesquels vous pouvez agir.</span><span class="de">Wir klären, was wirklich passiert ist. Im Rahmen eines klaren Auftrags sichern wir Beweise, rekonstruieren den zeitlichen Ablauf und dokumentieren Ergebnisse, auf deren Grundlage Sie handeln können.</span></p>
+          <button class="link" type="button" data-video="04"><span class="en">Watch the video</span><span class="ar">شاهد الفيديو</span><span class="fr">Voir la vidéo</span><span class="de">Video ansehen</span></button>
         </article>
-        <article class="card">
-          <div class="card-top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></svg><span class="n">05</span></div>
-          <h3><span class="en">Security Consulting</span><span class="ar">الاستشارات الأمنية</span></h3>
-          <p><span class="en">Helping you plan and decide. We prepare security and crisis plans, gather information lawfully from public or authorized sources, and report on partners and suppliers.</span><span class="ar">نساعدك على التخطيط واتخاذ القرار. نعدّ خطط الأمن والأزمات، ونجمع المعلومات بشكل قانوني من مصادر علنية أو مصرّح بها، ونعدّ تقارير عن الشركاء والموردين.</span></p>
-          <button class="link" type="button" data-video="05"><span class="en">Watch the video</span><span class="ar">شاهد الفيديو</span></button>
+        <article class="card reveal">
+          <div class="card-top"><svg class="ico" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218ZM173.32,74.63l-64,32a6,6,0,0,0-2.69,2.69l-32,64A6,6,0,0,0,80,182a6.06,6.06,0,0,0,2.68-.63l64-32a6,6,0,0,0,2.69-2.69l32-64a6,6,0,0,0-8.05-8.05Zm-33.79,64.9L93.42,162.58l23-46.11,46.11-23Z"/></svg><span class="n">05</span></div>
+          <h3><span class="en">Security Consulting</span><span class="ar">الاستشارات الأمنية</span><span class="fr">Conseil en sécurité</span><span class="de">Sicherheits­beratung</span></h3>
+          <p><span class="en">Helping you plan and decide. We prepare security and crisis plans, gather information lawfully from public or authorized sources, and report on partners and suppliers.</span><span class="ar">نساعدك على التخطيط واتخاذ القرار. نعدّ خطط الأمن والأزمات، ونجمع المعلومات بشكل قانوني من مصادر علنية أو مصرّح بها، ونعدّ تقارير عن الشركاء والموردين.</span><span class="fr">Vous aider à planifier et à décider. Nous préparons des plans de sécurité et de crise, recueillons légalement des informations auprès de sources publiques ou autorisées, et établissons des rapports sur vos partenaires et fournisseurs.</span><span class="de">Wir helfen Ihnen beim Planen und Entscheiden. Wir entwickeln Sicherheits- und Krisenpläne, beschaffen Informationen rechtmäßig aus öffentlichen oder autorisierten Quellen und erstellen Berichte zu Partnern und Lieferanten.</span></p>
+          <button class="link" type="button" data-video="05"><span class="en">Watch the video</span><span class="ar">شاهد الفيديو</span><span class="fr">Voir la vidéo</span><span class="de">Video ansehen</span></button>
         </article>
-        <article class="card card-cta">
-          <h3><span class="en">Not sure where to start?</span><span class="ar">لا تعرف من أين تبدأ؟</span></h3>
-          <p><span class="en">Tell us what you need to protect, and we'll suggest the right first step.</span><span class="ar">أخبرنا بما تريد حمايته، وسنقترح عليك الخطوة الأولى المناسبة.</span></p>
-          <a class="btn primary" href="mailto:Rasad.syria@gmail.com"><span class="en">Write to us</span><span class="ar">راسلنا</span></a>
+        <article class="card card-cta reveal">
+          <div class="dotbg" aria-hidden="true"></div>
+          <h3><span class="en">Not sure where to start?</span><span class="ar">لا تعرف من أين تبدأ؟</span><span class="fr">Vous ne savez pas par où commencer ?</span><span class="de">Sie wissen nicht, wo Sie anfangen sollen?</span></h3>
+          <p><span class="en">Tell us what you need to protect, and we'll suggest the right first step.</span><span class="ar">أخبرنا بما تريد حمايته، وسنقترح عليك الخطوة الأولى المناسبة.</span><span class="fr">Dites-nous ce que vous devez protéger, et nous vous proposerons la bonne première étape.</span><span class="de">Sagen Sie uns, was Sie schützen müssen, und wir schlagen Ihnen den richtigen ersten Schritt vor.</span></p>
+          <a class="btn primary" href="mailto:Rasad.syria@gmail.com"><span class="en">Write to us</span><span class="ar">راسلنا</span><span class="fr">Écrivez-nous</span><span class="de">Schreiben Sie uns</span></a>
         </article>
       </div>
     </div>
   </section>
 
   <!-- COMPLIANCE (AML/CFT) -->
-  <section class="section compliance" id="compliance">
+  <section class="section dark compliance" id="compliance">
     <div class="wrap">
-      <p class="kicker"><span class="num">03</span><span class="en">Financial crime compliance</span><span class="ar">الامتثال لمكافحة الجرائم المالية</span></p>
-      <h2><span class="en">Clean money <em>opens doors.</em></span><span class="ar">المال النظيف <em>يفتح الأبواب.</em></span></h2>
-      <p class="sub"><span class="en">Syria's banks are reconnecting with the world, and every new partner asks one question: is this money clean? We help banks, investors and regulators answer it.</span><span class="ar">المصارف السورية تعود إلى الاتصال بالعالم، وكل شريك جديد يطرح سؤالاً واحداً: هل هذا المال نظيف؟ نساعد المصارف والمستثمرين والجهات الرقابية على الإجابة عنه.</span></p>
+      <div class="head with-map">
+        <div>
+          <p class="kicker"><span class="num">03</span><span class="en">Financial crime compliance</span><span class="ar">الامتثال لمكافحة الجرائم المالية</span><span class="fr">Lutte contre la criminalité financière</span><span class="de">Bekämpfung von Finanzkriminalität</span></p>
+          <h2><span class="en">Clean money <em>opens doors.</em></span><span class="ar">المال النظيف <em>يفتح الأبواب.</em></span><span class="fr">L’argent propre <em>ouvre les portes.</em></span><span class="de">Sauberes Geld <em>öffnet Türen.</em></span></h2>
+          <p class="sub"><span class="en">Syria's banks are reconnecting with the world, and every new partner asks one question: is this money clean? We help banks, investors and regulators answer it.</span><span class="ar">المصارف السورية تعود إلى الاتصال بالعالم، وكل شريك جديد يطرح سؤالاً واحداً: هل هذا المال نظيف؟ نساعد المصارف والمستثمرين والجهات الرقابية على الإجابة عنه.</span><span class="fr">Les banques syriennes renouent avec le monde, et chaque nouveau partenaire pose la même question : cet argent est-il propre ? Nous aidons les banques, les investisseurs et les régulateurs à y répondre.</span><span class="de">Syriens Banken finden wieder Anschluss an die Welt, und jeder neue Partner stellt dieselbe Frage: Ist dieses Geld sauber? Wir helfen Banken, Investoren und Aufsichtsbehörden, sie zu beantworten.</span></p>
+        </div>
+        <figure class="map reveal">
+          <img src="assets/img/map-reconnect.svg" alt="" width="800" height="560" loading="lazy">
+          <figcaption><span class="en">Syria reconnecting with regional and international partners (illustration).</span><span class="ar">سوريا تعود إلى التواصل مع شركائها الإقليميين والدوليين (رسم توضيحي).</span><span class="fr">La Syrie renoue avec ses partenaires régionaux et internationaux (illustration).</span><span class="de">Syrien knüpft wieder Verbindungen zu regionalen und internationalen Partnern (Illustration).</span></figcaption>
+        </figure>
+      </div>
       <div class="feature">
-        <button class="vcard" type="button" data-video="aml"><img src="assets/img/poster_aml.jpg" alt="" loading="lazy" width="1280" height="720"><span class="vmeta"><span class="en">AML / CFT for banks in Syria</span><span class="ar">مكافحة غسل الأموال وتمويل الإرهاب في المصارف السورية</span><time>1:14</time></span></button>
+        <button class="vcard big reveal" type="button" data-video="aml"><img src="assets/img/poster_aml.jpg" alt="" loading="lazy" width="1280" height="720"><span class="playbtn" aria-hidden="true"></span><span class="vmeta"><span class="en">AML / CFT for banks in Syria</span><span class="ar">مكافحة غسل الأموال وتمويل الإرهاب في المصارف السورية</span><span class="fr">LBC/FT pour les banques en Syrie</span><span class="de">AML/CFT für Banken in Syrien</span><time>1:14</time></span></button>
         <div class="facts">
-          <div class="stat">
-            <strong class="word warn"><span class="en">Grey list</span><span class="ar">القائمة الرمادية</span></strong>
-            <p><span class="en">Syria is under FATF increased monitoring, and launched a national AML/CFT strategy in July 2026.</span><span class="ar">سوريا تحت المتابعة المعززة لمجموعة العمل المالي، وأطلقت استراتيجية وطنية لمكافحة غسل الأموال وتمويل الإرهاب في تموز 2026.</span></p>
+          <div class="stat reveal">
+            <strong class="word warn"><span class="en">Grey list</span><span class="ar">القائمة الرمادية</span><span class="fr">Liste grise</span><span class="de">Graue Liste</span></strong>
+            <p><span class="en">Syria is under FATF increased monitoring, and launched a national AML/CFT strategy in July 2026.</span><span class="ar">سوريا تحت المتابعة المعززة لمجموعة العمل المالي، وأطلقت استراتيجية وطنية لمكافحة غسل الأموال وتمويل الإرهاب في تموز 2026.</span><span class="fr">La Syrie est sous surveillance renforcée du GAFI et a lancé en juillet 2026 une stratégie nationale de LBC/FT.</span><span class="de">Syrien steht unter verstärkter Beobachtung der FATF und hat im Juli 2026 eine nationale AML/CFT-Strategie gestartet.</span></p>
             <small>FATF, June 2026 · SANA, July 2026</small>
           </div>
-          <div class="stat">
-            <strong class="red">7.6%</strong>
-            <p><span class="en">average fall in capital inflows after grey-listing, as a share of GDP</span><span class="ar">متوسط تراجع تدفقات رأس المال بعد الإدراج في القائمة الرمادية، من الناتج المحلي</span></p>
+          <div class="stat reveal">
+            <strong class="red" data-count="7.6" data-suffix="%" data-dec="1">7.6%</strong>
+            <p><span class="en">average fall in capital inflows after grey-listing, as a share of GDP</span><span class="ar">متوسط تراجع تدفقات رأس المال بعد الإدراج في القائمة الرمادية، من الناتج المحلي</span><span class="fr">baisse moyenne des entrées de capitaux après l’inscription sur la liste grise, en part du PIB</span><span class="de">durchschnittlicher Rückgang der Kapitalzuflüsse nach Aufnahme in die graue Liste, gemessen am BIP</span></p>
             <small>IMF Working Paper WP/21/153</small>
           </div>
         </div>
       </div>
 
-      <h3 class="block-title"><span class="en">Six controls. <em>One program.</em></span><span class="ar">ستة ضوابط. <em>برنامج واحد.</em></span></h3>
+      <h3 class="block-title"><span class="en">Six controls. <em>One program.</em></span><span class="ar">ستة ضوابط. <em>برنامج واحد.</em></span><span class="fr">Six contrôles. <em>Un seul programme.</em></span><span class="de">Sechs Kontrollen. <em>Ein Programm.</em></span></h3>
       <ol class="controls">
-        <li><div class="ctrl-top"><span class="step-n">01</span><span class="abbr">KYC</span></div><h4><span class="en">Know your customer</span><span class="ar">اعرف عميلك</span></h4><p><span class="en">Verify identity, the source of funds and the purpose of the account.</span><span class="ar">التحقق من الهوية ومصدر الأموال والغرض من الحساب.</span></p></li>
-        <li><div class="ctrl-top"><span class="step-n">02</span><span class="abbr">KYB · UBO</span></div><h4><span class="en">Know the business and its owner</span><span class="ar">اعرف الشركة ومالكها</span></h4><p><span class="en">Check registration and licences, the ownership structure and the ultimate beneficial owner.</span><span class="ar">التحقق من السجل التجاري والتراخيص وهيكل الملكية والمستفيد الحقيقي.</span></p></li>
-        <li><div class="ctrl-top"><span class="step-n">03</span></div><h4><span class="en">Sanctions screening</span><span class="ar">فحص قوائم العقوبات</span></h4><p><span class="en">Screen every name against UN Security Council, OFAC, EU and UK lists, and re-check at every update.</span><span class="ar">فحص كل اسم مقابل قوائم مجلس الأمن وقوائم <bdi>OFAC</bdi> والاتحاد الأوروبي والمملكة المتحدة، وإعادة الفحص مع كل تحديث.</span></p></li>
-        <li><div class="ctrl-top"><span class="step-n">04</span><span class="abbr">PEP</span></div><h4><span class="en">Politically exposed persons</span><span class="ar">الأشخاص المعرّضون سياسياً</span></h4><p><span class="en">Senior public roles, their family and close associates: higher risk, more checks.</span><span class="ar">أصحاب المناصب العامة الرفيعة وأقاربهم والمقرّبون منهم: مخاطر أعلى، تدقيق أكبر.</span></p></li>
-        <li><div class="ctrl-top"><span class="step-n">05</span><span class="abbr">EDD</span></div><h4><span class="en">Enhanced due diligence</span><span class="ar">العناية الواجبة المعززة</span></h4><p><span class="en">Where risk is higher: source of wealth, senior management approval and closer ongoing review.</span><span class="ar">حيث ترتفع المخاطر: مصدر الثروة، وموافقة الإدارة العليا، ومراجعة مستمرة أدق.</span></p></li>
-        <li><div class="ctrl-top"><span class="step-n">06</span></div><h4><span class="en">Transaction monitoring</span><span class="ar">مراقبة المعاملات</span></h4><p><span class="en">Flag unusual patterns and report suspicious transactions to the financial intelligence unit.</span><span class="ar">رصد الأنماط غير الاعتيادية والإبلاغ عن المعاملات المشبوهة إلى وحدة المعلومات المالية.</span></p></li>
+        <li class="reveal"><div class="ctrl-top"><span class="node" aria-hidden="true"></span><span class="step-n">01</span><span class="abbr">KYC</span></div><h4><span class="en">Know your customer</span><span class="ar">اعرف عميلك</span><span class="fr">Connaissance du client</span><span class="de">Kunden­identifizierung</span></h4><p><span class="en">Verify identity, the source of funds and the purpose of the account.</span><span class="ar">التحقق من الهوية ومصدر الأموال والغرض من الحساب.</span><span class="fr">Vérifier l’identité, l’origine des fonds et l’objet du compte.</span><span class="de">Identität, Herkunft der Mittel und Zweck des Kontos prüfen.</span></p></li>
+        <li class="reveal"><div class="ctrl-top"><span class="node" aria-hidden="true"></span><span class="step-n">02</span><span class="abbr">KYB · UBO</span></div><h4><span class="en">Know the business and its owner</span><span class="ar">اعرف الشركة ومالكها</span><span class="fr">Connaître l’entreprise et son propriétaire</span><span class="de">Unternehmen und Eigentümer kennen</span></h4><p><span class="en">Check registration and licences, the ownership structure and the ultimate beneficial owner.</span><span class="ar">التحقق من السجل التجاري والتراخيص وهيكل الملكية والمستفيد الحقيقي.</span><span class="fr">Vérifier l’immatriculation et les licences, la structure de propriété et le bénéficiaire effectif.</span><span class="de">Handelsregister und Lizenzen, Eigentümerstruktur und den wirtschaftlich Berechtigten prüfen.</span></p></li>
+        <li class="reveal"><div class="ctrl-top"><span class="node" aria-hidden="true"></span><span class="step-n">03</span></div><h4><span class="en">Sanctions screening</span><span class="ar">فحص قوائم العقوبات</span><span class="fr">Filtrage des sanctions</span><span class="de">Sanktionslisten-Screening</span></h4><p><span class="en">Screen every name against UN Security Council, OFAC, EU and UK lists, and re-check at every update.</span><span class="ar">فحص كل اسم مقابل قوائم مجلس الأمن وقوائم <bdi>OFAC</bdi> والاتحاد الأوروبي والمملكة المتحدة، وإعادة الفحص مع كل تحديث.</span><span class="fr">Contrôler chaque nom au regard des listes du Conseil de sécurité de l’ONU, de l’OFAC, de l’UE et du Royaume-Uni, et recontrôler à chaque mise à jour.</span><span class="de">Jeden Namen mit den Listen des UN-Sicherheitsrats, der OFAC, der EU und des Vereinigten Königreichs abgleichen und bei jeder Aktualisierung erneut prüfen.</span></p></li>
+        <li class="reveal"><div class="ctrl-top"><span class="node" aria-hidden="true"></span><span class="step-n">04</span><span class="abbr">PEP</span></div><h4><span class="en">Politically exposed persons</span><span class="ar">الأشخاص المعرّضون سياسياً</span><span class="fr">Personnes politiquement exposées</span><span class="de">Politisch exponierte Personen</span></h4><p><span class="en">Senior public roles, their family and close associates: higher risk, more checks.</span><span class="ar">أصحاب المناصب العامة الرفيعة وأقاربهم والمقرّبون منهم: مخاطر أعلى، تدقيق أكبر.</span><span class="fr">Hautes fonctions publiques, leur famille et leurs proches : risque plus élevé, contrôles renforcés.</span><span class="de">Inhaber hoher öffentlicher Ämter, ihre Familien und nahestehende Personen: höheres Risiko, genauere Prüfung.</span></p></li>
+        <li class="reveal"><div class="ctrl-top"><span class="node" aria-hidden="true"></span><span class="step-n">05</span><span class="abbr">EDD</span></div><h4><span class="en">Enhanced due diligence</span><span class="ar">العناية الواجبة المعززة</span><span class="fr">Vigilance renforcée</span><span class="de">Verstärkte Sorgfalts­pflichten</span></h4><p><span class="en">Where risk is higher: source of wealth, senior management approval and closer ongoing review.</span><span class="ar">حيث ترتفع المخاطر: مصدر الثروة، وموافقة الإدارة العليا، ومراجعة مستمرة أدق.</span><span class="fr">Là où le risque est plus élevé : origine du patrimoine, approbation de la direction et suivi continu plus étroit.</span><span class="de">Wo das Risiko höher ist: Herkunft des Vermögens, Zustimmung der Geschäftsleitung und engere laufende Überwachung.</span></p></li>
+        <li class="reveal"><div class="ctrl-top"><span class="node" aria-hidden="true"></span><span class="step-n">06</span></div><h4><span class="en">Transaction monitoring</span><span class="ar">مراقبة المعاملات</span><span class="fr">Surveillance des transactions</span><span class="de">Transaktions­überwachung</span></h4><p><span class="en">Flag unusual patterns and report suspicious transactions to the financial intelligence unit.</span><span class="ar">رصد الأنماط غير الاعتيادية والإبلاغ عن المعاملات المشبوهة إلى وحدة المعلومات المالية.</span><span class="fr">Repérer les schémas inhabituels et déclarer les opérations suspectes à la cellule de renseignement financier.</span><span class="de">Auffällige Muster erkennen und verdächtige Transaktionen an die zentrale Meldestelle (FIU) melden.</span></p></li>
       </ol>
 
-      <h3 class="block-title"><span class="en">Three tracks. <em>One partner.</em></span><span class="ar">ثلاثة مسارات. <em>شريك واحد.</em></span></h3>
+      <h3 class="block-title"><span class="en">Three tracks. <em>One partner.</em></span><span class="ar">ثلاثة مسارات. <em>شريك واحد.</em></span><span class="fr">Trois axes. <em>Un seul partenaire.</em></span><span class="de">Drei Bereiche. <em>Ein Partner.</em></span></h3>
       <div class="cards tracks">
-        <article class="card">
-          <div class="card-top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.5 12 4l9 5.5H3Z"/><path d="M5.5 10v7.5M10 10v7.5M14 10v7.5M18.5 10v7.5"/><path d="M3 20h18"/></svg><span class="n"><span class="en">Track 01</span><span class="ar">المسار الأول</span></span></div>
-          <h3><span class="en">Banks and financial institutions</span><span class="ar">البنوك والمؤسسات المالية</span></h3>
+        <article class="card reveal">
+          <div class="card-top"><svg class="ico" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M24,102H50v68H32a6,6,0,0,0,0,12H224a6,6,0,0,0,0-12H206V102h26a6,6,0,0,0,3.14-11.11l-104-64a6,6,0,0,0-6.28,0l-104,64A6,6,0,0,0,24,102Zm38,0H98v68H62Zm84,0v68H110V102Zm48,68H158V102h36ZM128,39l82.8,51H45.2ZM246,208a6,6,0,0,1-6,6H16a6,6,0,0,1,0-12H240A6,6,0,0,1,246,208Z"/></svg><span class="n"><span class="en">Track 01</span><span class="ar">المسار الأول</span><span class="fr">Axe 01</span><span class="de">Bereich 01</span></span></div>
+          <h3><span class="en">Banks and financial institutions</span><span class="ar">البنوك والمؤسسات المالية</span><span class="fr">Banques et institutions financières</span><span class="de">Banken und Finanzinstitute</span></h3>
           <ul class="checks">
-            <li><span class="en">Customer screening</span><span class="ar">فحص العملاء</span></li>
-            <li><span class="en">Risk assessment</span><span class="ar">تقييم المخاطر</span></li>
-            <li><span class="en">Reviews of AML systems</span><span class="ar">مراجعة أنظمة مكافحة غسل الأموال</span></li>
-            <li><span class="en">Developing compliance procedures</span><span class="ar">تطوير إجراءات الامتثال</span></li>
+            <li><span class="en">Customer screening</span><span class="ar">فحص العملاء</span><span class="fr">Filtrage des clients</span><span class="de">Kundenprüfung</span></li>
+            <li><span class="en">Risk assessment</span><span class="ar">تقييم المخاطر</span><span class="fr">Évaluation des risques</span><span class="de">Risiko­bewertung</span></li>
+            <li><span class="en">Reviews of AML systems</span><span class="ar">مراجعة أنظمة مكافحة غسل الأموال</span><span class="fr">Revue des dispositifs LBC</span><span class="de">Prüfung von AML-Systemen</span></li>
+            <li><span class="en">Developing compliance procedures</span><span class="ar">تطوير إجراءات الامتثال</span><span class="fr">Élaboration des procédures de conformité</span><span class="de">Entwicklung von Compliance-Verfahren</span></li>
           </ul>
         </article>
-        <article class="card">
-          <div class="card-top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7"/><path d="M3 13h18"/><path d="M12 12v2"/></svg><span class="n"><span class="en">Track 02</span><span class="ar">المسار الثاني</span></span></div>
-          <h3><span class="en">Investors and companies</span><span class="ar">المستثمرون والشركات</span></h3>
+        <article class="card reveal">
+          <div class="card-top"><svg class="ico" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M106,112a6,6,0,0,1,6-6h32a6,6,0,0,1,0,12H112A6,6,0,0,1,106,112ZM230,72V200a14,14,0,0,1-14,14H40a14,14,0,0,1-14-14V72A14,14,0,0,1,40,58H82V48a22,22,0,0,1,22-22h48a22,22,0,0,1,22,22V58h42A14,14,0,0,1,230,72ZM94,58h68V48a10,10,0,0,0-10-10H104A10,10,0,0,0,94,48ZM38,72v42.79A186,186,0,0,0,128,138a185.91,185.91,0,0,0,90-23.22V72a2,2,0,0,0-2-2H40A2,2,0,0,0,38,72ZM218,200V128.37A198.12,198.12,0,0,1,128,150a198.05,198.05,0,0,1-90-21.62V200a2,2,0,0,0,2,2H216A2,2,0,0,0,218,200Z"/></svg><span class="n"><span class="en">Track 02</span><span class="ar">المسار الثاني</span><span class="fr">Axe 02</span><span class="de">Bereich 02</span></span></div>
+          <h3><span class="en">Investors and companies</span><span class="ar">المستثمرون والشركات</span><span class="fr">Investisseurs et entreprises</span><span class="de">Investoren und Unternehmen</span></h3>
           <ul class="checks">
-            <li><span class="en">Partner and supplier checks</span><span class="ar">التحقق من الشركاء والموردين</span></li>
-            <li><span class="en">Sanctions screening</span><span class="ar">فحص العقوبات</span></li>
-            <li><span class="en">Identifying beneficial owners</span><span class="ar">الكشف عن المستفيدين الحقيقيين</span></li>
-            <li><span class="en">Risk assessment of business deals</span><span class="ar">تقييم مخاطر التعاملات التجارية</span></li>
+            <li><span class="en">Partner and supplier checks</span><span class="ar">التحقق من الشركاء والموردين</span><span class="fr">Vérification des partenaires et fournisseurs</span><span class="de">Prüfung von Partnern und Lieferanten</span></li>
+            <li><span class="en">Sanctions screening</span><span class="ar">فحص العقوبات</span><span class="fr">Filtrage des sanctions</span><span class="de">Sanktionslisten-Screening</span></li>
+            <li><span class="en">Identifying beneficial owners</span><span class="ar">الكشف عن المستفيدين الحقيقيين</span><span class="fr">Identification des bénéficiaires effectifs</span><span class="de">Ermittlung wirtschaftlich Berechtigter</span></li>
+            <li><span class="en">Risk assessment of business deals</span><span class="ar">تقييم مخاطر التعاملات التجارية</span><span class="fr">Évaluation des risques des opérations commerciales</span><span class="de">Risikobewertung von Geschäften</span></li>
           </ul>
         </article>
-        <article class="card">
-          <div class="card-top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M8 20h8M5 7h14"/><path d="m5 7-2.5 6a2.5 2.5 0 0 0 5 0L5 7Z"/><path d="m19 7-2.5 6a2.5 2.5 0 0 0 5 0L19 7Z"/></svg><span class="n"><span class="en">Track 03</span><span class="ar">المسار الثالث</span></span></div>
-          <h3><span class="en">Government and regulators</span><span class="ar">الجهات الحكومية والرقابية</span></h3>
+        <article class="card reveal">
+          <div class="card-top"><svg class="ico" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M237.57,133.77l-32-80h0a6,6,0,0,0-6.86-3.63L134,64.52V40a6,6,0,0,0-12,0V67.19l-67.3,15a6,6,0,0,0-4.27,3.63h0v0l-32,80A6.1,6.1,0,0,0,18,168c0,21.86,23.31,30,38,30s38-8.14,38-30a6.1,6.1,0,0,0-.43-2.23L64.19,92.33,122,79.48V210H104a6,6,0,0,0,0,12h48a6,6,0,0,0,0-12H134V76.81l56.21-12.49-27.78,69.45A6.1,6.1,0,0,0,162,136c0,21.86,23.31,30,38,30s38-8.14,38-30A6.1,6.1,0,0,0,237.57,133.77ZM56,186a36.89,36.89,0,0,1-17.48-4.56c-5.37-3.13-8.15-7.18-8.49-12.37l26-64.91,26,64.91C81.06,182.85,62.58,186,56,186Zm144-32a36.89,36.89,0,0,1-17.48-4.56c-5.37-3.13-8.15-7.18-8.49-12.37l26-64.91,26,64.91C225.06,150.85,206.58,154,200,154Z"/></svg><span class="n"><span class="en">Track 03</span><span class="ar">المسار الثالث</span><span class="fr">Axe 03</span><span class="de">Bereich 03</span></span></div>
+          <h3><span class="en">Government and regulators</span><span class="ar">الجهات الحكومية والرقابية</span><span class="fr">Pouvoirs publics et régulateurs</span><span class="de">Behörden und Aufsicht</span></h3>
           <ul class="checks">
-            <li><span class="en">Training and technical advice</span><span class="ar">التدريب والاستشارات الفنية</span></li>
-            <li><span class="en">Developing risk-assessment mechanisms</span><span class="ar">تطوير آليات تقييم المخاطر</span></li>
-            <li><span class="en">Building institutional capacity</span><span class="ar">دعم بناء القدرات المؤسسية</span></li>
-            <li><span class="en">Within the required mandates and licences</span><span class="ar">وفق الصلاحيات والتراخيص اللازمة</span></li>
+            <li><span class="en">Training and technical advice</span><span class="ar">التدريب والاستشارات الفنية</span><span class="fr">Formation et conseil technique</span><span class="de">Schulung und fachliche Beratung</span></li>
+            <li><span class="en">Developing risk-assessment mechanisms</span><span class="ar">تطوير آليات تقييم المخاطر</span><span class="fr">Élaboration de mécanismes d’évaluation des risques</span><span class="de">Entwicklung von Verfahren zur Risikobewertung</span></li>
+            <li><span class="en">Building institutional capacity</span><span class="ar">دعم بناء القدرات المؤسسية</span><span class="fr">Renforcement des capacités institutionnelles</span><span class="de">Aufbau institutioneller Kapazitäten</span></li>
+            <li><span class="en">Within the required mandates and licences</span><span class="ar">وفق الصلاحيات والتراخيص اللازمة</span><span class="fr">Dans le respect des mandats et licences requis</span><span class="de">Im Rahmen der erforderlichen Mandate und Lizenzen</span></li>
           </ul>
         </article>
       </div>
-      <div class="ask">
-        <p><span class="en">Is your bank ready? <em>Let's talk.</em></span><span class="ar">هل مصرفك جاهز؟ <em>لنتحدث.</em></span></p>
-        <a class="btn primary" href="mailto:Rasad.syria@gmail.com?subject=AML%2FCFT"><span class="en">Write to us</span><span class="ar">راسلنا</span></a>
+      <div class="ask reveal">
+        <p><span class="en">Is your bank ready? <em>Let's talk.</em></span><span class="ar">هل مصرفك جاهز؟ <em>لنتحدث.</em></span><span class="fr">Votre banque est-elle prête ? <em>Parlons-en.</em></span><span class="de">Ist Ihre Bank bereit? <em>Sprechen wir darüber.</em></span></p>
+        <a class="btn primary" href="mailto:Rasad.syria@gmail.com?subject=AML%2FCFT"><span class="en">Write to us</span><span class="ar">راسلنا</span><span class="fr">Écrivez-nous</span><span class="de">Schreiben Sie uns</span></a>
       </div>
     </div>
   </section>
@@ -219,30 +254,36 @@
   <!-- HOW WE WORK -->
   <section class="section" id="how">
     <div class="wrap">
-      <p class="kicker"><span class="num">04</span><span class="en">How we work</span><span class="ar">كيف نعمل</span></p>
-      <h2><span class="en">Clear scope. <em>Clear results.</em></span><span class="ar">نطاق واضح. <em>نتائج واضحة.</em></span></h2>
+      <div class="head">
+        <p class="kicker"><span class="num">04</span><span class="en">How we work</span><span class="ar">كيف نعمل</span><span class="fr">Notre méthode</span><span class="de">So arbeiten wir</span></p>
+        <h2><span class="en">Clear scope. <em>Clear results.</em></span><span class="ar">نطاق واضح. <em>نتائج واضحة.</em></span><span class="fr">Un périmètre clair. <em>Des résultats clairs.</em></span><span class="de">Klarer Rahmen. <em>Klare Ergebnisse.</em></span></h2>
+      </div>
       <ol class="steps">
-        <li><span class="step-n">1</span><h3><span class="en">Understand</span><span class="ar">نفهم</span></h3><p><span class="en">We start with what matters most to you: your critical systems, information and services.</span><span class="ar">نبدأ بما يهمّك أكثر: أنظمتك ومعلوماتك وخدماتك الحيوية.</span></p></li>
-        <li><span class="step-n">2</span><h3><span class="en">Agree the scope</span><span class="ar">نتفق على النطاق</span></h3><p><span class="en">Every test and investigation is planned, authorized in writing and controlled.</span><span class="ar">كل اختبار وتحقيق مخطّط له ومصرّح به كتابياً وتحت السيطرة.</span></p></li>
-        <li><span class="step-n">3</span><h3><span class="en">Assess</span><span class="ar">نقيّم</span></h3><p><span class="en">We find the weak spots and risks, with your data kept confidential at every stage.</span><span class="ar">نكشف نقاط الضعف والمخاطر، مع الحفاظ على سرّية بياناتك في كل مرحلة.</span></p></li>
-        <li><span class="step-n">4</span><h3><span class="en">Act</span><span class="ar">نعمل</span></h3><p><span class="en">You get a clear report and a prioritized plan: what to fix today, and what can wait.</span><span class="ar">تحصل على تقرير واضح وخطة مرتّبة حسب الأولوية: ما يجب إصلاحه اليوم، وما يمكنه الانتظار.</span></p></li>
+        <li class="reveal"><span class="step-n">1</span><h3><span class="en">Understand</span><span class="ar">نفهم</span><span class="fr">Comprendre</span><span class="de">Verstehen</span></h3><p><span class="en">We start with what matters most to you: your critical systems, information and services.</span><span class="ar">نبدأ بما يهمّك أكثر: أنظمتك ومعلوماتك وخدماتك الحيوية.</span><span class="fr">Nous partons de ce qui compte le plus pour vous : vos systèmes, informations et services critiques.</span><span class="de">Wir beginnen mit dem, was Ihnen am wichtigsten ist: Ihren kritischen Systemen, Informationen und Diensten.</span></p></li>
+        <li class="reveal"><span class="step-n">2</span><h3><span class="en">Agree the scope</span><span class="ar">نتفق على النطاق</span><span class="fr">Convenir du périmètre</span><span class="de">Rahmen vereinbaren</span></h3><p><span class="en">Every test and investigation is planned, authorized in writing and controlled.</span><span class="ar">كل اختبار وتحقيق مخطّط له ومصرّح به كتابياً وتحت السيطرة.</span><span class="fr">Chaque test et chaque investigation est planifié, autorisé par écrit et maîtrisé.</span><span class="de">Jeder Test und jede Untersuchung wird geplant, schriftlich freigegeben und kontrolliert.</span></p></li>
+        <li class="reveal"><span class="step-n">3</span><h3><span class="en">Assess</span><span class="ar">نقيّم</span><span class="fr">Évaluer</span><span class="de">Bewerten</span></h3><p><span class="en">We find the weak spots and risks, with your data kept confidential at every stage.</span><span class="ar">نكشف نقاط الضعف والمخاطر، مع الحفاظ على سرّية بياناتك في كل مرحلة.</span><span class="fr">Nous identifions les points faibles et les risques, en préservant la confidentialité de vos données à chaque étape.</span><span class="de">Wir finden Schwachstellen und Risiken – Ihre Daten bleiben dabei in jeder Phase vertraulich.</span></p></li>
+        <li class="reveal"><span class="step-n">4</span><h3><span class="en">Act</span><span class="ar">نعمل</span><span class="fr">Agir</span><span class="de">Handeln</span></h3><p><span class="en">You get a clear report and a prioritized plan: what to fix today, and what can wait.</span><span class="ar">تحصل على تقرير واضح وخطة مرتّبة حسب الأولوية: ما يجب إصلاحه اليوم، وما يمكنه الانتظار.</span><span class="fr">Vous recevez un rapport clair et un plan priorisé : ce qu’il faut corriger aujourd’hui, et ce qui peut attendre.</span><span class="de">Sie erhalten einen klaren Bericht und einen priorisierten Plan: was heute behoben werden muss und was warten kann.</span></p></li>
       </ol>
     </div>
   </section>
 
   <!-- VIDEOS -->
-  <section class="section" id="videos">
+  <section class="section tint" id="videos">
     <div class="wrap">
-      <p class="kicker"><span class="num">05</span><span class="en">The video series</span><span class="ar">سلسلة الفيديوهات</span></p>
-      <h2><span class="en">Go deeper, <em>one service at a time.</em></span><span class="ar">تعمّق أكثر، <em>خدمة تلو الأخرى.</em></span></h2>
-      <p class="sub"><span class="en">Six short videos. Start with the overview.</span><span class="ar">ستة فيديوهات قصيرة. ابدأ بالنظرة العامة.</span></p>
+      <div class="head split">
+        <div>
+          <p class="kicker"><span class="num">05</span><span class="en">The video series</span><span class="ar">سلسلة الفيديوهات</span><span class="fr">La série vidéo</span><span class="de">Die Videoreihe</span></p>
+          <h2><span class="en">Go deeper, <em>one service at a time.</em></span><span class="ar">تعمّق أكثر، <em>خدمة تلو الأخرى.</em></span><span class="fr">Allez plus loin, <em>un service à la fois.</em></span><span class="de">Tiefer einsteigen, <em>Leistung für Leistung.</em></span></h2>
+        </div>
+        <p class="sub"><span class="en">Six short videos. Start with the overview.</span><span class="ar">ستة فيديوهات قصيرة. ابدأ بالنظرة العامة.</span><span class="fr">Six courtes vidéos, en anglais avec sous-titres arabes. Commencez par la présentation.</span><span class="de">Sechs kurze Videos auf Englisch mit arabischen Untertiteln. Beginnen Sie mit dem Überblick.</span></p>
+      </div>
       <div class="vgrid">
-        <button class="vcard" type="button" data-video="00"><img src="assets/img/poster_00.jpg" alt="" loading="lazy" width="1280" height="720"><span class="vmeta"><span class="en">00 · Overview</span><span class="ar">00 · نظرة عامة</span><time>1:50</time></span></button>
-        <button class="vcard" type="button" data-video="01"><img src="assets/img/poster_01.jpg" alt="" loading="lazy" width="1280" height="720"><span class="vmeta"><span class="en">01 · Cybersecurity</span><span class="ar">01 · الأمن السيبراني</span><time>1:39</time></span></button>
-        <button class="vcard" type="button" data-video="02"><img src="assets/img/poster_02.jpg" alt="" loading="lazy" width="1280" height="720"><span class="vmeta"><span class="en">02 · Information Security</span><span class="ar">02 · أمن المعلومات</span><time>1:47</time></span></button>
-        <button class="vcard" type="button" data-video="03"><img src="assets/img/poster_03.jpg" alt="" loading="lazy" width="1280" height="720"><span class="vmeta"><span class="en">03 · Risk Assessment</span><span class="ar">03 · تقييم المخاطر</span><time>2:04</time></span></button>
-        <button class="vcard" type="button" data-video="04"><img src="assets/img/poster_04.jpg" alt="" loading="lazy" width="1280" height="720"><span class="vmeta"><span class="en">04 · Digital Forensics</span><span class="ar">04 · التحقيقات الرقمية</span><time>1:33</time></span></button>
-        <button class="vcard" type="button" data-video="05"><img src="assets/img/poster_05.jpg" alt="" loading="lazy" width="1280" height="720"><span class="vmeta"><span class="en">05 · Security Consulting</span><span class="ar">05 · الاستشارات الأمنية</span><time>1:31</time></span></button>
+        <button class="vcard reveal" type="button" data-video="00"><img src="assets/img/poster_00.jpg" alt="" loading="lazy" width="1280" height="720"><span class="playbtn" aria-hidden="true"></span><span class="vmeta"><span class="en">00 · Overview</span><span class="ar">00 · نظرة عامة</span><span class="fr">00 · Présentation</span><span class="de">00 · Überblick</span><time>1:50</time></span></button>
+        <button class="vcard reveal" type="button" data-video="01"><img src="assets/img/poster_01.jpg" alt="" loading="lazy" width="1280" height="720"><span class="playbtn" aria-hidden="true"></span><span class="vmeta"><span class="en">01 · Cybersecurity</span><span class="ar">01 · الأمن السيبراني</span><span class="fr">01 · Cybersécurité</span><span class="de">01 · Cybersicherheit</span><time>1:39</time></span></button>
+        <button class="vcard reveal" type="button" data-video="02"><img src="assets/img/poster_02.jpg" alt="" loading="lazy" width="1280" height="720"><span class="playbtn" aria-hidden="true"></span><span class="vmeta"><span class="en">02 · Information Security</span><span class="ar">02 · أمن المعلومات</span><span class="fr">02 · Sécurité de l’information</span><span class="de">02 · Informations­sicherheit</span><time>1:47</time></span></button>
+        <button class="vcard reveal" type="button" data-video="03"><img src="assets/img/poster_03.jpg" alt="" loading="lazy" width="1280" height="720"><span class="playbtn" aria-hidden="true"></span><span class="vmeta"><span class="en">03 · Risk Assessment</span><span class="ar">03 · تقييم المخاطر</span><span class="fr">03 · Évaluation des risques</span><span class="de">03 · Risikobewertung</span><time>2:04</time></span></button>
+        <button class="vcard reveal" type="button" data-video="04"><img src="assets/img/poster_04.jpg" alt="" loading="lazy" width="1280" height="720"><span class="playbtn" aria-hidden="true"></span><span class="vmeta"><span class="en">04 · Digital Forensics</span><span class="ar">04 · التحقيقات الرقمية</span><span class="fr">04 · Investigation numérique</span><span class="de">04 · Digitale Forensik</span><time>1:33</time></span></button>
+        <button class="vcard reveal" type="button" data-video="05"><img src="assets/img/poster_05.jpg" alt="" loading="lazy" width="1280" height="720"><span class="playbtn" aria-hidden="true"></span><span class="vmeta"><span class="en">05 · Security Consulting</span><span class="ar">05 · الاستشارات الأمنية</span><span class="fr">05 · Conseil en sécurité</span><span class="de">05 · Sicherheitsberatung</span><time>1:31</time></span></button>
       </div>
     </div>
   </section>
@@ -250,28 +291,36 @@
   <!-- ABOUT -->
   <section class="section about" id="about">
     <div class="wrap about-row">
-      <img src="assets/img/emblem.png" alt="" width="256" height="256" loading="lazy">
+      <div class="emblem-dots reveal"><img src="assets/img/emblem-dots.svg" alt="" width="440" height="541" loading="lazy"></div>
       <div>
-        <p class="kicker"><span class="num">06</span><span class="en">About RASAD</span><span class="ar">عن رصد</span></p>
-        <h2><span class="en">Our name means <em>to watch.</em></span><span class="ar">اسمنا يعني <em>المراقبة.</em></span></h2>
-        <p><span class="en">RASAD (<bdi lang="ar" class="ar-inline">رصد</bdi>) is a cybersecurity services company based in Damascus. As organizations in Syria rebuild and reconnect, more of their work runs on systems, data and connections. We help them protect all three: calmly, within clear agreements, and with advice they can act on.</span><span class="ar">رصد شركة خدمات أمن سيبراني مقرّها دمشق. ومع إعادة البناء والتحوّل الرقمي، أصبح جزء أكبر من عمل المؤسسات في سوريا يعتمد على الأنظمة والبيانات والاتصالات. نساعدها على حمايتها جميعاً: بهدوء، وضمن اتفاقات واضحة، وبتوصيات قابلة للتنفيذ.</span></p>
+        <p class="kicker"><span class="num">06</span><span class="en">About RASAD</span><span class="ar">عن رصد</span><span class="fr">À propos de RASAD</span><span class="de">Über RASAD</span></p>
+        <h2><span class="en">Our name means <em>to watch.</em></span><span class="ar">اسمنا يعني <em>المراقبة.</em></span><span class="fr">Notre nom signifie <em>observer.</em></span><span class="de">Unser Name bedeutet <em>beobachten.</em></span></h2>
+        <p class="about-text"><span class="en">RASAD (<bdi lang="ar" class="ar-inline">رصد</bdi>) is a cybersecurity services company based in Damascus. As organizations in Syria rebuild and reconnect, more of their work runs on systems, data and connections. We help them protect all three: calmly, within clear agreements, and with advice they can act on.</span><span class="ar">رصد شركة خدمات أمن سيبراني مقرّها دمشق. ومع إعادة البناء والتحوّل الرقمي، أصبح جزء أكبر من عمل المؤسسات في سوريا يعتمد على الأنظمة والبيانات والاتصالات. نساعدها على حمايتها جميعاً: بهدوء، وضمن اتفاقات واضحة، وبتوصيات قابلة للتنفيذ.</span><span class="fr">RASAD (<bdi lang="ar" class="ar-inline">رصد</bdi>) est une société de services en cybersécurité basée à Damas. À mesure que les organisations syriennes se reconstruisent et renouent avec le monde, une part croissante de leur activité repose sur des systèmes, des données et des connexions. Nous les aidons à protéger tout cela : sereinement, dans le cadre d’accords clairs et avec des recommandations applicables.</span><span class="de">RASAD (<bdi lang="ar" class="ar-inline">رصد</bdi>) ist ein Dienstleister für Cybersicherheit mit Sitz in Damaskus. Während Organisationen in Syrien sich neu aufbauen und wieder vernetzen, hängt immer mehr ihrer Arbeit an Systemen, Daten und Verbindungen. Wir helfen ihnen, all das zu schützen: besonnen, auf Grundlage klarer Vereinbarungen und mit umsetzbaren Empfehlungen.</span></p>
+        <p class="etym"><span class="en"><bdi lang="ar" class="ar-inline">رَصَد</bdi>: to watch, to observe. From the same root comes <bdi lang="ar" class="ar-inline">مَرصَد</bdi> (marsad), an observatory.</span><span class="ar"><b>رَصَد</b>: راقَبَ وترقَّب. ومن الجذر نفسه جاءت كلمة <b>مَرصَد</b>.</span><span class="fr"><bdi lang="ar" class="ar-inline">رَصَد</bdi> : observer, veiller. De la même racine vient <bdi lang="ar" class="ar-inline">مَرصَد</bdi> (marsad), l’observatoire.</span><span class="de"><bdi lang="ar" class="ar-inline">رَصَد</bdi>: beobachten, wachen. Aus derselben Wurzel stammt <bdi lang="ar" class="ar-inline">مَرصَد</bdi> (marsad), das Observatorium.</span></p>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="section contact" id="contact">
+  <section class="section dark contact" id="contact">
+    <div class="dotbg fade" aria-hidden="true"></div>
     <div class="wrap">
-      <p class="kicker"><span class="num">07</span><span class="en">Contact</span><span class="ar">تواصل معنا</span></p>
-      <h2><span class="en">Tell us what you need <em>protected.</em></span><span class="ar">أخبرنا بما تريد <em>حمايته.</em></span></h2>
+      <p class="kicker"><span class="num">07</span><span class="en">Contact</span><span class="ar">تواصل معنا</span><span class="fr">Contact</span><span class="de">Kontakt</span></p>
+      <div class="brief">
+        <div>
+          <h2><span class="en">Book your <em>Briefing.</em></span><span class="ar">احجز <em>إحاطة رصد.</em></span><span class="fr">Réservez votre <em>Briefing RASAD.</em></span><span class="de">Vereinbaren Sie Ihr <em>RASAD-Briefing.</em></span></h2>
+          <p class="sub"><span class="en">The RASAD Briefing is a free, confidential 30-minute consultation on cybersecurity or AML/CFT compliance. Write to us with the subject “BRIEFING”, your sector and what you want to focus on.</span><span class="ar">إحاطة رصد جلسة استشارية مجانية وسرّية مدتها 30 دقيقة، في الأمن السيبراني أو في الامتثال لمكافحة غسل الأموال وتمويل الإرهاب. راسلنا بعنوان «<bdi>BRIEFING</bdi>»، واذكر قطاعك والمحور الذي تريد التركيز عليه.</span><span class="fr">Le Briefing RASAD est un entretien-conseil gratuit et confidentiel de 30 minutes, consacré à la cybersécurité ou à la conformité LBC/FT. Écrivez-nous avec l’objet « BRIEFING », en précisant votre secteur et le sujet qui vous intéresse.</span><span class="de">Das RASAD-Briefing ist ein kostenloses, vertrauliches Beratungsgespräch von 30 Minuten zu Cybersicherheit oder AML/CFT-Compliance. Schreiben Sie uns mit dem Betreff „BRIEFING“ und nennen Sie Ihre Branche und Ihr Thema.</span></p>
+        </div>
+        <a class="btn primary" href="mailto:Rasad.syria@gmail.com?subject=BRIEFING"><span class="en">Book a Briefing</span><span class="ar">احجز الإحاطة</span><span class="fr">Réserver un briefing</span><span class="de">Briefing anfragen</span></a>
+      </div>
       <div class="contact-row">
         <a class="contact-item" href="mailto:Rasad.syria@gmail.com">
-          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-          <span><small><span class="en">Email</span><span class="ar">البريد الإلكتروني</span></small><bdi>Rasad.syria@gmail.com</bdi></span>
+          <svg class="ico" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,50H32a6,6,0,0,0-6,6V192a14,14,0,0,0,14,14H216a14,14,0,0,0,14-14V56A6,6,0,0,0,224,50ZM208.58,62,128,135.86,47.42,62ZM216,194H40a2,2,0,0,1-2-2V69.64l86,78.78a6,6,0,0,0,8.1,0L218,69.64V192A2,2,0,0,1,216,194Z"/></svg>
+          <span><small><span class="en">Email</span><span class="ar">البريد الإلكتروني</span><span class="fr">E-mail</span><span class="de">E-Mail</span></small><bdi>Rasad.syria@gmail.com</bdi></span>
         </a>
         <div class="contact-item">
-          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          <span><small><span class="en">Location</span><span class="ar">الموقع</span></small><span class="en">Damascus, Syria</span><span class="ar">دمشق، سوريا</span></span>
+          <svg class="ico" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,66a38,38,0,1,0,38,38A38,38,0,0,0,128,66Zm0,64a26,26,0,1,1,26-26A26,26,0,0,1,128,130Zm0-112a86.1,86.1,0,0,0-86,86c0,30.91,14.34,63.74,41.47,94.94a252.32,252.32,0,0,0,41.09,38,6,6,0,0,0,6.88,0,252.32,252.32,0,0,0,41.09-38c27.13-31.2,41.47-64,41.47-94.94A86.1,86.1,0,0,0,128,18Zm0,206.51C113,212.93,54,163.62,54,104a74,74,0,0,1,148,0C202,163.62,143,212.93,128,224.51Z"/></svg>
+          <span><small><span class="en">Location</span><span class="ar">الموقع</span><span class="fr">Localisation</span><span class="de">Standort</span></small><span class="en">Damascus, Syria</span><span class="ar">دمشق، سوريا</span><span class="fr">Damas, Syrie</span><span class="de">Damaskus, Syrien</span></span>
         </div>
       </div>
       <div class="social">
@@ -279,6 +328,7 @@
         <a href="https://x.com/RasadSy" rel="noopener" target="_blank" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 3h3.2l-7 8 8.3 10h-6.5l-5-6.2L4.8 21H1.6l7.5-8.6L1.2 3h6.6l4.6 5.7L17.5 3Zm-1.1 16.1h1.8L6.7 4.8H4.8l11.6 14.3Z"/></svg></a>
         <a href="https://www.instagram.com/rasad.sy/" rel="noopener" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2"/></svg></a>
       </div>
+      <p class="closing"><span class="en">One question: <em>who sees it first, you or them?</em></span><span class="ar">سؤال واحد: <em>من يراه أولاً، أنت أم هم؟</em></span><span class="fr">Une seule question : <em>qui le voit en premier, vous ou eux ?</em></span><span class="de">Eine Frage: <em>Wer sieht es zuerst – Sie oder die Angreifer?</em></span></p>
     </div>
   </section>
 </main>
@@ -286,7 +336,7 @@
 <footer class="foot">
   <div class="wrap foot-row">
     <span>© <span id="year">2026</span> RASAD رصد</span>
-    <span><span class="en">Always watching, so you're always protected.</span><span class="ar">نرصد دائماً، لتبقى محمياً دائماً.</span></span>
+    <span><span class="en">Always watching, so you're always protected.</span><span class="ar">نرصد دائماً، لتبقى محمياً دائماً.</span><span class="fr">Toujours en veille, pour que vous soyez toujours protégés.</span><span class="de">Immer wachsam – damit Sie immer geschützt sind.</span></span>
   </div>
 </footer>
 
