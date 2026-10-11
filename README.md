@@ -2,6 +2,10 @@
 
 Static, dependency-free site (HTML + CSS + a few lines of JS). Arabic by default for Arabic browsers, English otherwise; the toggle in the header remembers the choice.
 
+
+// Live View: https://rasad-sy.github.io
+
+
 - `index.html` - all content, both languages side by side (`.en` / `.ar` spans)
 - `assets/styles.css` - brand theme (gold on navy-black)
 - `assets/main.js` - language toggle + video player
