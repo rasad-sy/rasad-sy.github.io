@@ -1,0 +1,57 @@
+/* RASAD coming-soon teaser (22 Nov 2026). Brand: ink #0E1422, paper #F5F2EA, gold #D4AA5C, dot #C4CEDA, one signal red #FF5444. */
+@font-face { font-family: PlexAr; src: url('fonts/IBMPlexSansArabic-500-arabic.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: PlexAr; src: url('fonts/IBMPlexSansArabic-700-arabic.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: Plex; src: url('fonts/Plex-400-latin.woff') format('woff'); font-weight: 400; font-display: swap; }
+@font-face { font-family: Plex; src: url('fonts/Plex-500-latin.woff') format('woff'); font-weight: 500; font-display: swap; }
+@font-face { font-family: PlexMono; src: url('fonts/PlexMono-400-latin.woff') format('woff'); font-weight: 400; font-display: swap; }
+:root { --ink: #0E1422; --night: #05080D; --paper: #F5F2EA; --gold: #D4AA5C; --dot: #C4CEDA; --muted: rgba(196, 206, 218, .72); }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--night); color: var(--paper); }
+body { font-family: PlexAr, Plex, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: var(--gold); text-decoration: none; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.en { font-family: Plex, system-ui, sans-serif; }
+
+.hunt { position: relative; height: 100svh; min-height: 540px; overflow: hidden; background: radial-gradient(ellipse 90% 70% at 50% 42%, #0A0F18 0, var(--night) 72%); }
+#field { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: none; cursor: none; }
+.brand { position: absolute; top: max(20px, env(safe-area-inset-top)); left: 0; right: 0; display: flex; justify-content: center; pointer-events: none; }
+.emblem { width: 44px; height: auto; opacity: .95; }
+
+.hint { position: absolute; left: 16px; right: 16px; bottom: max(40px, env(safe-area-inset-bottom)); text-align: center; pointer-events: none; transition: opacity .6s ease; }
+.hint p { margin: 0; }
+.hint .ar { font-size: clamp(22px, 5.4vw, 34px); font-weight: 700; line-height: 1.5; }
+.hint .en { font-size: clamp(14px, 3.4vw, 18px); color: var(--muted); }
+.hint .how { margin-top: 14px; font-size: 13px; color: var(--muted); letter-spacing: .02em; }
+.hint .how .ar { font-size: 14px; font-weight: 500; }
+.hint .how .sep { margin: 0 6px; color: var(--gold); }
+.reveal-btn { pointer-events: auto; margin-top: 18px; padding: 9px 20px; border-radius: 999px; border: 1px solid rgba(212, 170, 92, .55); background: rgba(212, 170, 92, .06); color: var(--paper); font: inherit; font-size: 14px; cursor: pointer; }
+.reveal-btn .en { color: var(--muted); margin-inline-start: 6px; }
+.reveal-btn:hover { background: rgba(212, 170, 92, .14); }
+
+.found { position: absolute; left: 16px; right: 16px; bottom: max(48px, env(safe-area-inset-bottom)); text-align: center; opacity: 0; transform: translateY(14px); transition: opacity .9s ease, transform .9s cubic-bezier(.2, .7, .2, 1); pointer-events: none; }
+.found.on { opacity: 1; transform: none; pointer-events: auto; }
+.hint.off { opacity: 0; }
+.found h1 { margin: 0; display: flex; flex-direction: column; gap: 4px; }
+.found h1 .ar { font-size: clamp(40px, 11vw, 76px); font-weight: 700; line-height: 1.2; color: var(--paper); }
+.found h1 .en { font-size: clamp(16px, 4vw, 24px); font-weight: 400; color: var(--muted); }
+.found .soon { margin: 18px 0 0; display: flex; flex-direction: column; gap: 2px; }
+.found .soon .ar { font-size: clamp(18px, 4.6vw, 26px); font-weight: 500; color: var(--gold); }
+.found .soon .en { font-family: PlexMono, monospace; font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); opacity: .8; }
+.down { display: inline-block; margin-top: 22px; font-size: 28px; line-height: 1; color: var(--gold); animation: bob 2.4s ease-in-out infinite; }
+@keyframes bob { 50% { transform: translateY(6px); } }
+
+.soon-sec { max-width: 620px; margin: 0 auto; padding: 72px 16px 48px; text-align: center; background-image: radial-gradient(circle, rgba(196, 206, 218, .22) 1.5px, transparent 2px); background-size: 27px 27px; }
+.lockup { width: min(320px, 70vw); height: auto; }
+.poster { margin: 40px auto 0; max-width: 540px; }
+.poster img { width: 100%; height: auto; display: block; border-radius: 10px; box-shadow: 0 24px 60px rgba(0, 0, 0, .55), 0 0 0 1px rgba(212, 170, 92, .25); }
+.claim { margin: 36px 0 0; display: flex; flex-direction: column; gap: 4px; }
+.claim .ar { font-size: 20px; font-weight: 500; }
+.claim .en { font-size: 14px; color: var(--muted); }
+.follow { margin-top: 30px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.follow a { padding: 9px 18px; border: 1px solid rgba(212, 170, 92, .5); border-radius: 999px; font-family: Plex, sans-serif; font-size: 14px; }
+.follow a:hover { background: rgba(212, 170, 92, .1); }
+.contact { margin-top: 22px; font-size: 15px; }
+.contact .en { color: var(--muted); margin-inline-start: 6px; }
+footer { padding: 28px 16px 40px; text-align: center; font-size: 12px; color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) { .down { animation: none; } .found, .hint { transition: none; } }
