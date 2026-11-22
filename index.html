@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self' mailto:">
 <title>رَصَد · RASAD | قريباً في سوريا · Coming soon in Syria</title>
 <meta name="description" content="رَصَد — قريباً في سوريا. RASAD — coming soon in Syria. We see it first.">
-<meta name="theme-color" content="#0E1422">
+<meta name="theme-color" content="#05080D">
 <meta property="og:type" content="website">
 <meta property="og:title" content="رَصَد · RASAD — قريباً في سوريا · Coming soon in Syria">
 <meta property="og:description" content="نراه أولاً. We see it first.">
@@ -19,9 +19,24 @@
 <script src="assets/cs.js" defer></script>
 </head>
 <body>
+<!-- icon sprite: our own simple line icons, no external requests -->
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-cyber" viewBox="0 0 24 24"><path d="M12 3l7 2.6v5.6c0 4.4-2.9 8.1-7 9.8-4.1-1.7-7-5.4-7-9.8V5.6z"/><rect x="9" y="10.8" width="6" height="4.6" rx=".9"/><path d="M10.3 10.8V9.5a1.7 1.7 0 013.4 0v1.3"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><ellipse cx="12" cy="12" rx="3.6" ry="8.5"/><path d="M3.5 12h17M5 7.6h14M5 16.4h14"/></symbol>
+    <symbol id="i-risk" viewBox="0 0 24 24"><path d="M4 16.5a8 8 0 1116 0"/><path d="M12 16.5l3.8-5"/><circle cx="12" cy="16.5" r="1.2"/><path d="M6.4 10.2l1 .8M12 6.8V8M17.6 10.2l-1 .8"/></symbol>
+    <symbol id="i-invest" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/><path d="M7.8 10.5a2.7 2.7 0 012.7-2.7"/></symbol>
+    <symbol id="i-consult" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M15.6 8.4l-2.1 5.1-5.1 2.1 2.1-5.1z"/><circle cx="12" cy="12" r=".6"/></symbol>
+    <symbol id="i-ai" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1.6"/><path d="M9.5 4v3M14.5 4v3M9.5 17v3M14.5 17v3M4 9.5h3M4 14.5h3M17 9.5h3M17 14.5h3"/><path d="M9.9 14.3l1.4-4 1.4 4M10.3 13.1h2M14.4 10.3v4"/></symbol>
+  </defs>
+</svg>
+
+<canvas id="field" aria-hidden="true"></canvas>
+<div class="veil" aria-hidden="true"></div>
+
 <main>
   <section class="hunt" id="hunt" aria-label="رَصَد · RASAD">
-    <canvas id="field" aria-hidden="true"></canvas>
+    <div class="hud" id="hud" aria-hidden="true">SCANNING · 00:00</div>
     <header class="brand">
       <img src="assets/img/emblem-v8-gold.svg" alt="رَصَد RASAD" class="emblem" width="44" height="54">
     </header>
@@ -34,22 +49,142 @@
     <div class="found" id="found" aria-live="polite">
       <h1><span class="ar">نراه أولاً.</span><span class="en" dir="ltr" lang="en">We see it first.</span></h1>
       <p class="soon"><span class="ar">قريباً في سوريا</span><span class="en" dir="ltr" lang="en">Coming soon in Syria</span></p>
-      <a class="down" href="#soon" aria-label="المزيد · More">⌄</a>
+      <a class="down" href="#soon" aria-label="المزيد · More"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg></a>
     </div>
   </section>
 
   <section class="soon-sec" id="soon">
-    <img src="assets/img/logo-v8-gold.svg" alt="رَصَد RASAD" class="lockup" width="360" height="196">
-    <figure class="poster"><img src="assets/img/coming-soon.jpg" alt="Coming soon in Syria — رَصَد RASAD" width="1080" height="1350" loading="lazy"></figure>
-    <p class="claim"><span class="ar">نرصد دائماً، لتبقى محمياً دائماً.</span><span class="en" dir="ltr" lang="en">Always watching, so you're always protected.</span></p>
-    <nav class="follow" aria-label="Follow">
-      <a href="https://www.instagram.com/rasad.sy/" rel="noopener" target="_blank">Instagram</a>
-      <a href="https://www.facebook.com/profile.php?id=61594540937357" rel="noopener" target="_blank">Facebook</a>
-      <a href="https://x.com/RasadSy" rel="noopener" target="_blank">X</a>
-    </nav>
-    <p class="contact"><a href="mailto:Rasad.syria@gmail.com"><span class="ar">تواصل معنا</span> <span class="en" lang="en">Talk to us</span></a></p>
+    <div class="stage rv" id="stage">
+      <div class="aura" aria-hidden="true"></div>
+      <figure class="poster">
+        <div class="tilt" id="tilt">
+          <img class="poster-img" src="assets/img/coming-soon.jpg" srcset="assets/img/coming-soon.jpg 1080w, assets/img/coming-soon-2x.jpg 2160w" sizes="(min-width: 900px) min(760px, 58vw), 100vw" alt="Coming soon in Syria — رَصَد RASAD" width="1080" height="1350" decoding="async">
+          <div class="hots" id="hots" aria-hidden="true">
+            <span class="hot" data-i="0"></span><span class="hot" data-i="1"></span><span class="hot" data-i="2"></span>
+            <span class="hot" data-i="3"></span><span class="hot" data-i="4"></span><span class="hot" data-i="5"></span>
+          </div>
+        </div>
+      </figure>
+      <div class="slens" id="slens" aria-hidden="true">
+        <div class="glass"><img class="mag" id="slens-img" alt="" width="3200" height="1007" decoding="async"></div>
+        <svg class="ticks" viewBox="-100 -100 200 200" focusable="false"><circle r="97" class="ring"/><g class="spin"><path class="t" d="M0 -97V-91M0 97V91M97 0H91M-97 0H-91M68.6 -68.6l-4.2 4.2M-68.6 -68.6l4.2 4.2M68.6 68.6l-4.2 -4.2M-68.6 68.6l4.2 -4.2M25.1 -93.7l-1.5 5.6M-25.1 -93.7l1.5 5.6M25.1 93.7l-1.5 -5.6M-25.1 93.7l1.5 5.6M93.7 -25.1l-5.6 1.5M-93.7 -25.1l5.6 1.5M93.7 25.1l-5.6 -1.5M-93.7 25.1l5.6 -1.5"/></g></svg>
+        <i class="br tl"></i><i class="br tr"></i><i class="br bl"></i><i class="br brr"></i>
+        <span class="cross"></span>
+        <span class="ro" id="slens-ro">X 000 · Y 000</span>
+      </div>
+    </div>
+
+    <div class="side rv">
+      <img src="assets/img/logo-v8-gold.svg" alt="رَصَد RASAD" class="lockup" width="360" height="196">
+      <p class="claim"><span class="ar">نرصد دائماً، لتبقى محمياً دائماً.</span><span class="en" dir="ltr" lang="en">Always watching, so you're always protected.</span></p>
+      <nav class="follow" aria-label="Follow · تابعنا">
+        <p class="follow-cap"><span class="ar">تابعنا</span> <span class="en" lang="en">Follow us</span></p>
+        <ul class="socials">
+          <li><a class="soc" href="https://www.instagram.com/rasad.sy/" rel="noopener" target="_blank" aria-label="Instagram" data-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" class="fill"/></svg></a></li>
+          <li><a class="soc" href="https://www.facebook.com/profile.php?id=61594540937357" rel="noopener" target="_blank" aria-label="Facebook" data-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-8h2.7l.5-3.2h-3.2V7.9c0-.9.4-1.6 1.7-1.6h1.6V3.5c-.3 0-1.3-.2-2.4-.2-2.5 0-4 1.5-4 4.2v2.3H7.7V13h2.8v8z" class="fill"/></svg></a></li>
+          <li><a class="soc" href="https://x.com/RasadSy" rel="noopener" target="_blank" aria-label="X" data-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.8 3.2h3l-6.6 7.6 7.8 10.3h-6.1l-4.8-6.3-5.5 6.3h-3l7-8.1L2.6 3.2h6.3l4.3 5.7zm-1.1 16.1h1.7L7.4 4.9H5.6z" class="fill"/></svg></a></li>
+          <!-- LinkedIn and TikTok: add here only after the exact URLs are confirmed -->
+        </ul>
+      </nav>
+      <p class="contact"><a href="mailto:Rasad.syria@gmail.com"><span class="ar">تواصل معنا</span> <span class="en" lang="en">Talk to us</span></a></p>
+    </div>
+  </section>
+
+  <section class="svc" id="services" aria-labelledby="svc-h">
+    <header class="svc-head rv">
+      <h2 id="svc-h"><span class="ar">خدماتنا</span><span class="en" dir="ltr" lang="en">Our services</span></h2>
+      <p class="svc-tip"><span class="tip-fine"><span class="ar">مرّر فوق خدمات الصورة لتكبيرها.</span> <span class="en" dir="ltr" lang="en">Hover the services on the poster to zoom in.</span></span><span class="tip-touch"><span class="ar">المس خدمة لتكبيرها.</span> <span class="en" dir="ltr" lang="en">Tap a service to zoom in.</span></span></p>
+    </header>
+    <ol class="tiles" id="tiles">
+      <li class="tile rv">
+        <button type="button" class="tile-btn" data-i="0" aria-controls="card" aria-expanded="false">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cyber"/></svg>
+          <span class="t-num" aria-hidden="true">01</span>
+          <span class="t-names"><span class="ar t-ar">الأمن السيبراني</span><span class="en t-en" dir="ltr" lang="en">Cybersecurity</span></span>
+          <span class="t-line"><span class="ar">حماية الشبكات والأنظمة والتطبيقات والبيانات.</span><span class="en" dir="ltr" lang="en">Protecting your networks, systems, applications and data.</span></span>
+        </button>
+        <ul class="vh what">
+          <li><span class="ar">نختبر دفاعاتك</span><span class="en" dir="ltr" lang="en">We test your defences</span></li>
+          <li><span class="ar">ضمن نطاق مصرّح به</span><span class="en" dir="ltr" lang="en">within an authorized scope</span></li>
+        </ul>
+      </li>
+      <li class="tile rv">
+        <button type="button" class="tile-btn" data-i="1" aria-controls="card" aria-expanded="false">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-info"/></svg>
+          <span class="t-num" aria-hidden="true">02</span>
+          <span class="t-names"><span class="ar t-ar">أمن المعلومات</span><span class="en t-en" dir="ltr" lang="en">Information Security</span></span>
+          <span class="t-line"><span class="ar">حماية المعلومات نفسها.</span><span class="en" dir="ltr" lang="en">Protecting the information itself.</span></span>
+        </button>
+        <ul class="vh what">
+          <li><span class="ar">نصنّفها حسب الحساسية</span><span class="en" dir="ltr" lang="en">We classify it by sensitivity</span></li>
+          <li><span class="ar">ننظّم صلاحيات الوصول</span><span class="en" dir="ltr" lang="en">We organize who can access what</span></li>
+        </ul>
+      </li>
+      <li class="tile rv">
+        <button type="button" class="tile-btn" data-i="2" aria-controls="card" aria-expanded="false">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-risk"/></svg>
+          <span class="t-num" aria-hidden="true">03</span>
+          <span class="t-names"><span class="ar t-ar">تقييم المخاطر</span><span class="en t-en" dir="ltr" lang="en">Risk Assessment</span></span>
+          <span class="t-line"><span class="ar">نوضّح لك من أين تبدأ.</span><span class="en" dir="ltr" lang="en">Showing you where to act first.</span></span>
+        </button>
+        <ul class="vh what">
+          <li><span class="ar">نسلّمك خطة مرتّبة حسب الأولوية</span><span class="en" dir="ltr" lang="en">We deliver a prioritized plan</span></li>
+        </ul>
+      </li>
+      <li class="tile rv">
+        <button type="button" class="tile-btn" data-i="3" aria-controls="card" aria-expanded="false">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-invest"/></svg>
+          <span class="t-num" aria-hidden="true">04</span>
+          <span class="t-names"><span class="ar t-ar">التحقيقات الرقمية</span><span class="en t-en" dir="ltr" lang="en">Digital Investigations</span></span>
+          <span class="t-line"><span class="ar">نجيب عمّا حدث فعلاً.</span><span class="en" dir="ltr" lang="en">Answering what really happened.</span></span>
+        </button>
+        <ul class="vh what">
+          <li><span class="ar">نجمع الأدلة ونحفظها</span><span class="en" dir="ltr" lang="en">We collect and preserve evidence</span></li>
+          <li><span class="ar">نعيد بناء التسلسل الزمني</span><span class="en" dir="ltr" lang="en">We rebuild the timeline</span></li>
+        </ul>
+      </li>
+      <li class="tile rv">
+        <button type="button" class="tile-btn" data-i="4" aria-controls="card" aria-expanded="false">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-consult"/></svg>
+          <span class="t-num" aria-hidden="true">05</span>
+          <span class="t-names"><span class="ar t-ar">الاستشارات الأمنية</span><span class="en t-en" dir="ltr" lang="en">Security Consulting</span></span>
+          <span class="t-line"><span class="ar">نساعدك على التخطيط واتخاذ القرار.</span><span class="en" dir="ltr" lang="en">Helping you plan and decide.</span></span>
+        </button>
+        <ul class="vh what">
+          <li><span class="ar">نعدّ خطط الأمن والأزمات</span><span class="en" dir="ltr" lang="en">We prepare security and crisis plans</span></li>
+        </ul>
+      </li>
+      <li class="tile rv">
+        <button type="button" class="tile-btn" data-i="5" aria-controls="card" aria-expanded="false">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ai"/></svg>
+          <span class="t-num" aria-hidden="true">06</span>
+          <span class="t-names"><span class="ar t-ar">خدمات الذكاء الاصطناعي</span><span class="en t-en" dir="ltr" lang="en">AI Services</span></span>
+          <span class="t-line"><span class="ar">الذكاء الاصطناعي أساس كل عمل اليوم. نساعدك على استخدامه بأمان.</span><span class="en" dir="ltr" lang="en">AI is the basis of every business today. We help you use it safely.</span></span>
+        </button>
+        <ul class="vh what">
+          <li><span class="ar">مساعدون خاصّون بالعربية والإنجليزية يعملون على مستنداتك</span><span class="en" dir="ltr" lang="en">Private Arabic-English assistants on your own documents</span></li>
+          <li><span class="ar">بحث في المستندات وأتمتة لسير العمل</span><span class="en" dir="ltr" lang="en">Document search and workflow automation</span></li>
+          <li><span class="ar">اختبارات مصرّح بها واستجابة للحوادث بمساعدة الذكاء الاصطناعي</span><span class="en" dir="ltr" lang="en">AI-assisted authorized testing and incident support</span></li>
+          <li><span class="ar">والمزيد</span><span class="en" dir="ltr" lang="en">and more</span></li>
+        </ul>
+      </li>
+    </ol>
   </section>
 </main>
-<footer><span class="en" dir="ltr" lang="en">© 2026 RASAD · Damascus, Syria</span></footer>
+
+<!-- the service card: filled by cs.js from the list above (single source of text) -->
+<aside class="card" id="card" role="region" aria-live="polite" aria-label="Service details · تفاصيل الخدمة">
+  <button type="button" class="card-x" id="card-x" aria-label="إغلاق · Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <header class="c-head">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" id="c-ico"><use href="#i-cyber"/></svg>
+    <div class="c-names"><h3 class="ar" id="c-ar"></h3><p class="en" dir="ltr" lang="en" id="c-en"></p></div>
+    <span class="c-idx" id="c-idx" aria-hidden="true">01/06</span>
+  </header>
+  <p class="c-prom"><span class="ar" id="c-par"></span><span class="en" dir="ltr" lang="en" id="c-pen"></span></p>
+  <ul class="c-what" id="c-what"></ul>
+  <footer class="c-foot" aria-hidden="true" id="c-foot">SVC 01/06</footer>
+</aside>
+
+<footer class="page-foot"><span class="en" dir="ltr" lang="en">© 2026 RASAD · Damascus, Syria</span></footer>
 </body>
 </html>
