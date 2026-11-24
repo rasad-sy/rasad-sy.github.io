@@ -1,18 +1,15 @@
 # RASAD | رصد website
 
-Static, dependency-free site (HTML + CSS + a few lines of JS). Arabic by default for Arabic browsers, English otherwise; the toggle in the header remembers the choice.
+Current page: "coming soon in Syria" teaser. Static, dependency-free (HTML + CSS + JS), strict Content-Security-Policy, no trackers, no third-party requests.
 
+Live view: https://rasad-sy.github.io
 
-// Live View: https://rasad-sy.github.io
+- `index.html` - the teaser (hero with the hidden dot, poster, services lens, platforms)
+- `assets/cs.css`, `assets/cs.js` - styles and scripts
+- `assets/img/` - logo, poster (1x and 2x), lens picture, social image; `assets/fonts/` - self-hosted IBM Plex
 
-
-- `index.html` - all content, both languages side by side (`.en` / `.ar` spans)
-- `assets/styles.css` - brand theme (gold on navy-black)
-- `assets/main.js` - language toggle + video player
-- `assets/fonts/` - self-hosted Barlow + IBM Plex Sans Arabic (no Google requests at runtime)
-- `assets/video/` - the six explainer videos, `assets/img/` - logo, posters, social image
-
-No trackers, no third-party scripts, strict Content-Security-Policy.
+## The full website (saved to the side)
+The complete previous site (Arabic/English/French/German, videos, AML/CFT section, Syria map, RASAD Briefing) is kept in this same repo on the branch `full-site-2026-11-22`.
+To bring it back: `git checkout main && git checkout full-site-2026-11-22 -- . && git commit` (or merge that branch), then push.
 
 Preview locally: `python -m http.server 8791` in this folder, then open http://localhost:8791
-Deploy: upload the whole folder to any static host (GitHub Pages, Cloudflare Pages, Netlify).
